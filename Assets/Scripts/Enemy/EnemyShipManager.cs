@@ -30,7 +30,7 @@ public class EnemyShipManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
