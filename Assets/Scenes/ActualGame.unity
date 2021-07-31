@@ -456,67 +456,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Music: {fileID: 8300000, guid: 1779437eff66f944bb503f67987a339b, type: 3}
---- !u!1001 &1009105474
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023160, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516964646763023161, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: m_Name
-      value: EnemyShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 6914473391883331140, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1530191796}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
 --- !u!1 &1176276459
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,11 +749,6 @@ MonoBehaviour:
   waveFrequency: 0.3
   waveLength: 0.8
   waveOriginPosition: {x: 0, y: 0, z: 0}
---- !u!4 &1530191796 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2287293714556783161, guid: 6a8135e91a014ad4c8122b177f959575, type: 3}
-  m_PrefabInstance: {fileID: 2287293714674755627}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1911354207
 GameObject:
   m_ObjectHideFlags: 0

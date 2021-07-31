@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e90483dde9cc8438eecdae67ff6d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  cannonPart: {fileID: 970672223}
+  cannonProjectile: {fileID: 3984117693959263163, guid: 634edff8e4d46484b879ef30fd0a6fac, type: 3}
 --- !u!1 &970672223
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   maxBound: -20
+  healthPoints: 3
 --- !u!1 &6516964647243325516
 GameObject:
   m_ObjectHideFlags: 0
