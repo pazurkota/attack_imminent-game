@@ -104,8 +104,8 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Game Over!");
                 
                 explosionFX.Play();
-                
-                Destroy(gameObject);
+
+                gameObject.transform.localScale = new Vector3(0, 0, 0);
                 
                 _playerAudio.PlayOneShot(explosionSound, 1.0f);
                 _playerAudio.PlayOneShot(gameOverSound, 1.0f);
