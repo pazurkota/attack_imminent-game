@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  healthPoints: 5
+  playerHealthPoints: 4
   canShoot: 1
   gameOver: 0
   bulletProjectile: {fileID: 5488800785090432814, guid: cd4f10a37c888474188992e6d2d913f2, type: 3}
@@ -539,6 +539,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 91626af319f43c249bf09200b2cc4081, type: 3}
   explosionSound: {fileID: 8300000, guid: d49c2c7460ff52f4d9789707159cbea3, type: 3}
   criticalCondition: {fileID: 8300000, guid: 7d7c02a2de72f474ba2c6a8beac2051c, type: 3}
+  gameOverSound: {fileID: 8300000, guid: a41aa6c6090d87940b93cdd3352d0981, type: 3}
 --- !u!65 &4859096663078094368
 BoxCollider:
   m_ObjectHideFlags: 0

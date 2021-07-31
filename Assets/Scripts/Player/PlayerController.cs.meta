@@ -3,7 +3,13 @@ guid: d45dd09fa6c0f974aac396a056682d89
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bulletProjectile: {instanceID: 0}
+  - explosionFX: {instanceID: 0}
+  - shootSound: {instanceID: 0}
+  - explosionSound: {instanceID: 0}
+  - criticalCondition: {instanceID: 0}
+  - gameOverSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

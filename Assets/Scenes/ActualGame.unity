@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a6df342b52d24092cf6bbb590c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveHeight: 4
+  waveHeight: 3
   waveFrequency: 0.3
   waveLength: 0.8
   waveOriginPosition: {x: 0, y: 0, z: 0}
@@ -783,8 +783,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -434.1, y: -252.06}
-  m_SizeDelta: {x: 230, y: 50}
+  m_AnchoredPosition: {x: -406.7, y: -248.7}
+  m_SizeDelta: {x: 278.97, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911354209
 MonoBehaviour:
@@ -819,9 +819,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Attack Imminent! Alpha build [0.6.0]
+  m_Text: 'Attack Imminent! Beta build [BETA-1.1.0]
 
-    Jazzcat Games: All rights reserved'
+    PazurKOTA: All rights reserved'
 --- !u!222 &1911354210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -837,26 +837,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 419963411, guid: 6a8135e91a014ad4c8122b177f959575, type: 3}
-      propertyPath: gameOver
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 419963411, guid: 6a8135e91a014ad4c8122b177f959575, type: 3}
-      propertyPath: alarmSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8c2b61b2472550547bae4fd4d5472e4f, type: 3}
-    - target: {fileID: 419963411, guid: 6a8135e91a014ad4c8122b177f959575, type: 3}
-      propertyPath: gameOverSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a41aa6c6090d87940b93cdd3352d0981, type: 3}
-    - target: {fileID: 419963411, guid: 6a8135e91a014ad4c8122b177f959575, type: 3}
-      propertyPath: playerHealthPoints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1401990659, guid: 6a8135e91a014ad4c8122b177f959575, type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2287293714556783161, guid: 6a8135e91a014ad4c8122b177f959575, type: 3}
       propertyPath: m_RootOrder
       value: 2

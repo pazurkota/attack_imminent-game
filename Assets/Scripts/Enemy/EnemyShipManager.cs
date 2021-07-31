@@ -7,6 +7,7 @@ public class EnemyShipManager : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float maxBound;
+    [SerializeField] private float healthPoints;
 
     // Start is called before the first frame update
     void Start()
@@ -30,13 +31,17 @@ public class EnemyShipManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet") && healthPoints > 0)
         {
+            healthPoints--;
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            if (healthPoints == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
