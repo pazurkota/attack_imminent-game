@@ -819,9 +819,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Attack Imminent! Beta build [BETA-1.2.0]
-
-    PazurKOTA: All rights reserved'
+  m_Text: "Attack Imminent! Beta build [BETA-1.2.1]\nInteractive Studios: All rights
+    reserved \xA9"
 --- !u!222 &1911354210
 CanvasRenderer:
   m_ObjectHideFlags: 0

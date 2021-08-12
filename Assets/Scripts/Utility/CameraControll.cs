@@ -1,28 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
-public class CameraControll : MonoBehaviour
+namespace Utility
 {
-    private PlayerController _playerController;
-    private AudioSource cameraAudio;
-    public AudioClip Music;
-    
-    // Start is called before the first frame update
-    void Start()
+    public class CameraControll : MonoBehaviour
     {
-        _playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        cameraAudio = GetComponent<AudioSource>();
+        // Variables
+        private PlayerController _playerController; // PlayerController.cs component
+        private AudioSource _cameraAudio; // AudioSource component
         
-        cameraAudio.PlayOneShot(Music, 1.0f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (_playerController.gameOver == true)
+        public AudioClip music; // Music played while playing the game
+    
+        // Actual Code
+        void Start()
         {
-            cameraAudio.Stop();
+            _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Get PlayerController.cs script
+            _cameraAudio = GetComponent<AudioSource>(); // Get AudioSource component from camera
+        
+            _cameraAudio.PlayOneShot(music, 1.0f); // Play music
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (_playerController.gameOver) // If game over is true, stop playing the music
+            {
+                _cameraAudio.Stop();
+            }
         }
     }
 }
