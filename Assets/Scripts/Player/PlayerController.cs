@@ -115,6 +115,33 @@ namespace Player
                     gameOver = true;
                 }
             }
+
+            if (other.gameObject.CompareTag("PowerPowerup"))
+            {
+                Debug.Log($"Collided with {other.gameObject.name}");
+                Destroy(other.gameObject);
+            }
+
+            if (other.gameObject.CompareTag("RepairPowerup"))
+            {
+                if (playerHealthPoints < 4)
+                {
+                    ++playerHealthPoints;
+                    Debug.Log($"Added 1 player health point! Now you have {playerHealthPoints}HP");
+                    Destroy(other.gameObject);
+                }
+                else
+                { 
+                    Destroy(other.gameObject);
+                    Debug.Log("You have max HP!");
+                }
+            }
+
+            if (other.gameObject.CompareTag("ShieldPowerup"))
+            {
+                Debug.Log($"Collided with {other.gameObject.name}");                
+                Destroy(other.gameObject);
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using Player;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ namespace Utility
         
             InvokeRepeating("EnemyPlaneSpawn", 2, Random.Range(3, 5)); // Invoke spawning plane
             InvokeRepeating("EnemyShipSpawn", 2, Random.Range(8, 12)); // Invoke spawning ship
+            InvokeRepeating("SpawnPowerups", 2, Random.Range(10, 16));
         }
 
         void EnemyPlaneSpawn()
@@ -36,6 +38,16 @@ namespace Utility
             if (_playerController.gameOver == false)
             {
                 Instantiate(enemyPrefab[1], spawnPos, enemyPrefab[1].transform.rotation);
+            }
+        }
+
+        void SpawnPowerups()
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(-9.8f, 9.8f), 6, Random.Range(-4.5f, 4.5f));
+            int randomPowerup = Random.Range(0, powerupPrefab.Length);
+            if (_playerController.gameOver == false)
+            {
+                Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
             }
         }
     }

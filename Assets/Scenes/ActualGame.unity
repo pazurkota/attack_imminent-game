@@ -155,6 +155,10 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 5242483802311991763, guid: 595f2903cc3d8064484d382e6d7ab815, type: 3}
   - {fileID: 6516964646763023161, guid: d39e85ae327258b45b7426dd2a1c1f68, type: 3}
+  powerupPrefab:
+  - {fileID: 107744, guid: 0782c4fdae5f1624ba26300a1dc7a0a7, type: 3}
+  - {fileID: 132260, guid: 510349479745aac4b9209e9326e42601, type: 3}
+  - {fileID: 1729945580980676, guid: 7bc251a7285632341a306c70a8f1cfbe, type: 3}
 --- !u!4 &154988414
 Transform:
   m_ObjectHideFlags: 0
@@ -167,7 +171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -357,7 +361,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1779437eff66f944bb503f67987a339b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -455,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aceaa6b3cc8bf4e843f58cbd276180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Music: {fileID: 8300000, guid: 1779437eff66f944bb503f67987a339b, type: 3}
+  music: {fileID: 0}
 --- !u!1 &1176276459
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +553,7 @@ RectTransform:
   m_Children:
   - {fileID: 1911354208}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -620,7 +624,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347037602
 GameObject:
