@@ -4,12 +4,10 @@
     <list default="true" id="04ff50b5-9f9c-4b9c-821a-3e3566b8f618" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Models/LowPolyWater_Pack/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/LowPolyWater_Pack/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/PowerUps/PowerPowerup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/PowerUps/PowerPowerup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/PowerUps/RepairPowerup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/PowerUps/RepairPowerup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/PowerUps/ShieldPowerup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/PowerUps/ShieldPowerup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Misc/CannonBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Misc/CannonBullet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyPlaneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyPlaneManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +70,7 @@
       <workItem from="1627661823874" duration="5345000" />
       <workItem from="1628780171522" duration="1691000" />
       <workItem from="1628940933999" duration="949000" />
+      <workItem from="1628953774485" duration="1247000" />
     </task>
     <servers />
   </component>

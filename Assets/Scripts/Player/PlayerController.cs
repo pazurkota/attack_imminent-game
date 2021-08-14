@@ -10,6 +10,7 @@ namespace Player
         [SerializeField] private float playerHealthPoints; // Player health
         [SerializeField] private bool canShoot = true; // Check if player can shoot
         [SerializeField] private bool strongerShoot = false; // Check if player have "Power" powerup;
+        [SerializeField] private bool hasShield = false;
         private float _horizontalInput;
         private float _verticalInput;
     
@@ -104,8 +105,18 @@ namespace Player
 
         IEnumerator PowerupCountdown()
         {
-            yield return new WaitForSeconds(4);
-            strongerShoot = false;
+            if (strongerShoot)
+            {
+                yield return new WaitForSeconds(4);
+                strongerShoot = false;
+            }
+
+            if (hasShield)
+            {
+                yield return new WaitForSeconds(4);
+                hasShield = false;
+                playerShield.gameObject.SetActive(false);
+            }
         }
 
         private void OnCollisionEnter(Collision other)
@@ -160,8 +171,10 @@ namespace Player
 
             if (other.gameObject.CompareTag("ShieldPowerup"))
             {
-                Debug.Log($"Collided with: {other.gameObject.name}");
+                hasShield = true;
+                playerShield.gameObject.SetActive(true);
                 Destroy(other.gameObject);
+                StartCoroutine(PowerupCountdown());
             }
         }
     }

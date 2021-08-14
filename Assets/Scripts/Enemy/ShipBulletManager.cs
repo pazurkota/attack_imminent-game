@@ -58,4 +58,12 @@ public class ShipBulletManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Shield"))
+        {
+            Destroy(gameObject);            
+        }
+    }
 }
