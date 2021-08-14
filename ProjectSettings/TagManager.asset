@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - PowerPowerup
+  - RepairPowerup
+  - ShieldPowerup
+  - Shield
   layers:
   - Default
   - TransparentFX

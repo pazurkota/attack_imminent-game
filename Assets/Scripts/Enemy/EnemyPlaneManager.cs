@@ -43,5 +43,10 @@ public class EnemyPlaneManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if (other.gameObject.CompareTag("Shield") && healthPoints > 0)
+        {
+            --healthPoints;
+            Destroy(gameObject);
+        }
     }
 }

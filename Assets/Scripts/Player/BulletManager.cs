@@ -1,25 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletManager : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float maxBound;
+    public class BulletManager : MonoBehaviour
+    {
+        // Variables
+        [SerializeField] private float speed; // Bullet speed
+        [SerializeField] private float maxBound; // Set the bullet max bound
     
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);    
-        
-        DestroyOutOfBounds();
-    }
-
-    void DestroyOutOfBounds()
-    {
-        if (transform.position.z > maxBound)
+        // Actual Code
+        void Update()
         {
-            Destroy(gameObject);
+            transform.Translate(Vector3.up * speed * Time.deltaTime); // Change bullet position  
+        
+            DestroyOutOfBounds(); // Destroy bullet if it fly out of the bounds
+        }
+
+        void DestroyOutOfBounds()
+        {
+            if (transform.position.z > maxBound)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

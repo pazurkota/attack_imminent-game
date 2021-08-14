@@ -1,44 +1,48 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonManager : MonoBehaviour
+namespace Enemy
 {
-    private GameObject target;
-    public GameObject cannonPart;
-    public GameObject cannonProjectile;
-    private bool _canShoot = true;
+    public class CannonManager : MonoBehaviour
+    {
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        target = GameObject.Find("Player");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 direction = target.transform.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 4 * Time.deltaTime);
-        
-        ShootCannon();
-    }
-
-    void ShootCannon()
-    {
-        if (_canShoot)
+        // Variables
+        private GameObject _target;
+        public GameObject cannonPart; // Get cannon part
+        public GameObject cannonProjectile; // Cannon projectile prefab
+        private bool _canShoot = true; // Check if ship can shoot
+    
+        // Actual code
+        void Start()
         {
-            Vector3 spawnPos = new Vector3(transform.position.x, 6, transform.position.z);
-            Instantiate(cannonProjectile, spawnPos, cannonPart.transform.rotation);
-            _canShoot = false;
-            StartCoroutine(ShootTimeout());
+            _target = GameObject.Find("Player"); // Find player as a target
         }
-    }
+        
+        void Update()
+        {
+            // Lock cannon at player
+            Vector3 direction = _target.transform.position - transform.position; 
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 4 * Time.deltaTime);
+        
+            ShootCannon(); // Shoot the cannon
+        }
 
-    IEnumerator ShootTimeout()
-    {
-        yield return new WaitForSeconds(1);
-        _canShoot = true;
+        void ShootCannon()
+        {
+            if (_canShoot)
+            {
+                Vector3 spawnPos = new Vector3(transform.position.x, 6, transform.position.z);
+                Instantiate(cannonProjectile, spawnPos, cannonPart.transform.rotation);
+                _canShoot = false;
+                StartCoroutine(ShootTimeout());
+            }
+        }
+
+        IEnumerator ShootTimeout()
+        {
+            yield return new WaitForSeconds(1);
+            _canShoot = true;
+        }
     }
 }
