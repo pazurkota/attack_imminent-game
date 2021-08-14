@@ -9,6 +9,7 @@ TagManager:
   - PowerPowerup
   - RepairPowerup
   - ShieldPowerup
+  - Shield
   layers:
   - Default
   - TransparentFX

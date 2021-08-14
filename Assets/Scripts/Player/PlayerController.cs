@@ -9,6 +9,7 @@ namespace Player
         [SerializeField] private float speed; // Player speed
         [SerializeField] private float playerHealthPoints; // Player health
         [SerializeField] private bool canShoot = true; // Check if player can shoot
+        [SerializeField] private bool strongerShoot = false; // Check if player have "Power" powerup;
         private float _horizontalInput;
         private float _verticalInput;
     
@@ -20,6 +21,7 @@ namespace Player
     
         // Public components
         public GameObject bulletProjectile; // Player bullet projectile prefab 
+        public GameObject playerShield; // Get player shield
         public ParticleSystem explosionFX; // Explosion effect
         public AudioClip shootSound; // Player bullet shoot sound effect
         public AudioClip explosionSound; // Explosion sound effect
@@ -46,6 +48,8 @@ namespace Player
             // Move player in Z axis (vertical)
             _verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * speed * _verticalInput * Time.deltaTime);
+
+            playerShield.transform.position = transform.position;
         
             PlaneShoot(); // Player cannon can shoot bullets in every 0.5 seconds
             KeepPlayerInBounds(); // Keep player inbounds
@@ -86,8 +90,22 @@ namespace Player
 
         IEnumerator ShootTimeout() 
         {
-            yield return new WaitForSeconds(0.5f); // Wait 0.5 seconds to shoots
-            canShoot = true; // Set "can shoot" bool to true
+            if (strongerShoot)
+            {
+                yield return new WaitForSeconds(0.15f);
+                canShoot = true;
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.5f); // Wait 0.5 seconds to shoots
+                canShoot = true; // Set "can shoot" bool to true
+            }
+        }
+
+        IEnumerator PowerupCountdown()
+        {
+            yield return new WaitForSeconds(4);
+            strongerShoot = false;
         }
 
         private void OnCollisionEnter(Collision other)
@@ -115,11 +133,15 @@ namespace Player
                     gameOver = true;
                 }
             }
+        }
 
+        private void OnTriggerEnter(Collider other)
+        {
             if (other.gameObject.CompareTag("PowerPowerup"))
             {
-                Debug.Log($"Collided with {other.gameObject.name}");
+                strongerShoot = true;
                 Destroy(other.gameObject);
+                StartCoroutine(PowerupCountdown());
             }
 
             if (other.gameObject.CompareTag("RepairPowerup"))
@@ -127,19 +149,18 @@ namespace Player
                 if (playerHealthPoints < 4)
                 {
                     ++playerHealthPoints;
-                    Debug.Log($"Added 1 player health point! Now you have {playerHealthPoints}HP");
-                    Destroy(other.gameObject);
+                    Debug.Log($"Added 1 HP! Now you have {playerHealthPoints} HP!");
                 }
                 else
-                { 
-                    Destroy(other.gameObject);
-                    Debug.Log("You have max HP!");
+                {
+                    Debug.Log("You have already max hp!");
                 }
+                Destroy(other.gameObject);
             }
 
             if (other.gameObject.CompareTag("ShieldPowerup"))
             {
-                Debug.Log($"Collided with {other.gameObject.name}");                
+                Debug.Log($"Collided with: {other.gameObject.name}");
                 Destroy(other.gameObject);
             }
         }
