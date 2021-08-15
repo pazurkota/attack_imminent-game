@@ -1010,6 +1010,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3340101877594270065, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: gameOver
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340101877594270065, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: playerShield
       value: 
       objectReference: {fileID: 1061940373}
@@ -1019,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: m_LocalPosition.y

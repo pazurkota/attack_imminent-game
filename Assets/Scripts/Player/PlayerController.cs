@@ -47,8 +47,8 @@ namespace Player
             transform.Translate(Vector3.right * speed * _horizontalInput * Time.deltaTime);
         
             // Move player in Z axis (vertical)
-            _verticalInput = Input.GetAxis("Vertical"); // @todo Fix the Y-Position bug
-            transform.Translate(Vector3.forward * speed * _verticalInput * Time.deltaTime);
+            _verticalInput = Input.GetAxis("Vertical");
+            transform.Translate(Vector3.down * speed * _verticalInput * Time.deltaTime);
 
             playerShield.transform.position = transform.position;
         
