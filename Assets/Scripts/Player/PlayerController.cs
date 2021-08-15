@@ -19,10 +19,10 @@ namespace Player
     
         // Private components
         private AudioSource _playerAudio; // AudioSource component
-    
+
         // Public components
-        public GameObject bulletProjectile; // Player bullet projectile prefab 
         public GameObject playerShield; // Get player shield
+        public GameObject bulletProjectile; // Player bullet projectile prefab 
         public ParticleSystem explosionFX; // Explosion effect
         public AudioClip shootSound; // Player bullet shoot sound effect
         public AudioClip explosionSound; // Explosion sound effect
@@ -47,7 +47,7 @@ namespace Player
             transform.Translate(Vector3.right * speed * _horizontalInput * Time.deltaTime);
         
             // Move player in Z axis (vertical)
-            _verticalInput = Input.GetAxis("Vertical");
+            _verticalInput = Input.GetAxis("Vertical"); // @todo Fix the Y-Position bug
             transform.Translate(Vector3.forward * speed * _verticalInput * Time.deltaTime);
 
             playerShield.transform.position = transform.position;
