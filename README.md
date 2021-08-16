@@ -1,5 +1,6 @@
-# ATTACK IMMINENT! - A first unity project
-## Basic information
+<p><img align="center" src="README_Images/github-baner.png"/></p>
+
+<h2 align="center">Gameplay information</h2>
 *What is game about?* It's simple shoot em' up, inspired by Sky Force series created by Infinite Dreams. Your mission is to stay as long alive as possible, there is no end, just another planes AND ships. This is my first unity project/game, so any constructive criticism is allowed here!
 
 ## Technical information
