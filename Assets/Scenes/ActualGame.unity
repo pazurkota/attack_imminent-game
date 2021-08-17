@@ -456,7 +456,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1779437eff66f944bb503f67987a339b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aceaa6b3cc8bf4e843f58cbd276180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: 1779437eff66f944bb503f67987a339b, type: 3}
 --- !u!1 &1061940373
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +903,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Attack Imminent! Beta build [BETA-1.3.0] (PowerUp Update)\nInteractive
+  m_Text: "Attack Imminent! Beta build [BETA-1.3.0B] (PowerUp Update)\nInteractive
     Studios: All rights reserved \xA9"
 --- !u!222 &1911354210
 CanvasRenderer:
@@ -920,6 +920,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3340101877594270065, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: gameOver
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3340101877594270065, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: playerShield
       value: 

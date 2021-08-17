@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="04ff50b5-9f9c-4b9c-821a-3e3566b8f618" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Grass.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Grass.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Textures/Utility.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Textures/Utility/Grass002_2K_Color.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Textures/Utility/Grass002_2K_Color.jpg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/CameraControll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/CameraControll.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +71,7 @@
       <workItem from="1629056521524" duration="1493000" />
       <workItem from="1629062388272" duration="442000" />
       <workItem from="1629230049760" duration="1879000" />
+      <workItem from="1629233590133" duration="638000" />
     </task>
     <servers />
   </component>
