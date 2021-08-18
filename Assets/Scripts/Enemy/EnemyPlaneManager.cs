@@ -31,6 +31,11 @@ namespace Enemy
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
+
+            if (other.CompareTag("Shield"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

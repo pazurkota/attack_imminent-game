@@ -20,7 +20,7 @@ namespace Utility
             
             InvokeRepeating("SpawnPowerups", 8, Random.Range(10, 16));
             InvokeRepeating("EnemyPlaneSpawn", 2, Random.Range(2, 3));
-            InvokeRepeating("EnemyHelicopterSpawn", 4, Random.Range(6, 8));
+            InvokeRepeating("EnemyHelicopterSpawn", 4, Random.Range(10, 17));
         }
 
         void SpawnPowerups()
@@ -35,18 +35,18 @@ namespace Utility
 
         void EnemyPlaneSpawn()
         {
-            Vector3 spawnPos = new Vector3(Random.Range(-9.7f, 9.7f), 6, 8);
             if (_playerController.gameOver == false)
             {
-                Instantiate(enemyPlanePrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);
+                Vector3 spawnPos = new Vector3(Random.Range(-9.7f, 9.7f), 6, 8);
+                Instantiate(enemyPlanePrefab, spawnPos, enemyPlanePrefab.transform.rotation);
             }
         }
 
         void EnemyHelicopterSpawn()
         {
-            Vector3 spawnPos = new Vector3(Random.Range(-10, 10), 6, 8);
             if (_playerController.gameOver == false)
             {
+                Vector3 spawnPos = new Vector3(Random.Range(-10, 10), 6, 8);
                 Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);
             }
         }
