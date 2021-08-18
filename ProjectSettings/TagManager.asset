@@ -4,12 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Bullet
   - PowerPowerup
   - RepairPowerup
   - ShieldPowerup
   - Shield
+  - EnemyPlane
+  - EnemyHelicopter
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

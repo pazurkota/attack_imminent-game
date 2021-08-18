@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  playerHealthPoints: 4
+  playerHealthPoints: 6
   canShoot: 1
   strongerShoot: 0
   hasShield: 0

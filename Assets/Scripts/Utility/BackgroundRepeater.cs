@@ -19,7 +19,7 @@ namespace Utility
         {
             if (_playerController.gameOver == false)
             {
-                _tempScroll += 0.0001f;
+                _tempScroll += 0.0025f;
                 renderTerrain.material.mainTextureOffset = new Vector2(0, -_tempScroll);
             }
         }
