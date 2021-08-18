@@ -4,11 +4,9 @@
     <list default="true" id="04ff50b5-9f9c-4b9c-821a-3e3566b8f618" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Models/Enemy/EnemyPlane.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Enemy/EnemyPlane.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Misc.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Misc/Bullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Misc/Bullet.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/BackgroundRepeater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/BackgroundRepeater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyPlaneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyPlaneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <workItem from="1629062388272" duration="442000" />
       <workItem from="1629230049760" duration="1879000" />
       <workItem from="1629233590133" duration="1237000" />
-      <workItem from="1629319002129" duration="995000" />
+      <workItem from="1629319002129" duration="2078000" />
     </task>
     <servers />
   </component>
