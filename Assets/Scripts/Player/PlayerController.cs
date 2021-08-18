@@ -19,10 +19,10 @@ namespace Player
     
         // Private components
         private AudioSource _playerAudio; // AudioSource component
-    
+
         // Public components
-        public GameObject bulletProjectile; // Player bullet projectile prefab 
         public GameObject playerShield; // Get player shield
+        public GameObject bulletProjectile; // Player bullet projectile prefab 
         public ParticleSystem explosionFX; // Explosion effect
         public AudioClip shootSound; // Player bullet shoot sound effect
         public AudioClip explosionSound; // Explosion sound effect
@@ -48,7 +48,7 @@ namespace Player
         
             // Move player in Z axis (vertical)
             _verticalInput = Input.GetAxis("Vertical");
-            transform.Translate(Vector3.forward * speed * _verticalInput * Time.deltaTime);
+            transform.Translate(Vector3.down * speed * _verticalInput * Time.deltaTime);
 
             playerShield.transform.position = transform.position;
         
@@ -121,28 +121,27 @@ namespace Player
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("Enemy") && playerHealthPoints > 0) // If gameObject has tag "Enemy" and player have more than 0 health points
+            if (other.gameObject.CompareTag("EnemyHelicopter") && playerHealthPoints > 0)
             {
-                playerHealthPoints--; // Take 1 player point
-                Destroy(other.gameObject); // Destroy enemy
+                playerHealthPoints -= 2;
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.CompareTag("EnemyPlane") && playerHealthPoints > 0)
+            {
+                playerHealthPoints--;
+                Destroy(other.gameObject);
+            }
 
-                if (playerHealthPoints == 1) // If player have the last health point
-                {
-                    _playerAudio.PlayOneShot(criticalCondition, 1.0f);
-                }
-                else if (playerHealthPoints == 0) // If player have 0 health points
-                {
-                    Debug.Log("Game Over!");
-                 
-                    explosionFX.Play(); // Play explosion FX
-
-                    gameObject.transform.localScale = new Vector3(0, 0, 0); // Scale the player to 0
-                
-                    _playerAudio.PlayOneShot(explosionSound, 1.0f); // Play explosion sound effect
-                    _playerAudio.PlayOneShot(gameOverSound, 1.0f); // Play "Game Over" sound effect
-
-                    gameOver = true;
-                }
+            if (playerHealthPoints == 1)
+            {
+                _playerAudio.PlayOneShot(criticalCondition, 1.0f);
+            }
+            else if (playerHealthPoints == 0)
+            {
+                gameOver = true;
+                explosionFX.Play();
+                _playerAudio.PlayOneShot(gameOverSound, 1.0f);
+                gameObject.transform.localScale = new Vector3(0, 0, 0);
             }
         }
 
@@ -175,6 +174,12 @@ namespace Player
                 playerShield.gameObject.SetActive(true);
                 Destroy(other.gameObject);
                 StartCoroutine(PowerupCountdown());
+            }
+
+            if (other.CompareTag("EnemyBullet"))
+            {
+                --playerHealthPoints;
+                Destroy(other.gameObject);
             }
         }
     }
