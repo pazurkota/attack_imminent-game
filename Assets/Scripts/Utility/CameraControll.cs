@@ -16,8 +16,8 @@ namespace Utility
         {
             _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Get PlayerController.cs script
             _cameraAudio = GetComponent<AudioSource>(); // Get AudioSource component from camera
-        
-            _cameraAudio.PlayOneShot(music, 1.0f); // Play music
+            
+            _cameraAudio.PlayOneShot(music, 1.0f);
         }
 
         // Update is called once per frame

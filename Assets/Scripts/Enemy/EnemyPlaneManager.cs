@@ -1,52 +1,41 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPlaneManager : MonoBehaviour
+namespace Enemy
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float maxBound;
-    [SerializeField] private float healthPoints;
-
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyPlaneManager : MonoBehaviour
     {
+        public GameObject planePropeller;
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        
-        // Run script modules
-        DestoryOutOfBounds(); // Destroy enemy when go out of screen
-    }
-
-    void DestoryOutOfBounds()
-    {
-        if (transform.position.z < maxBound)
+        void Update()
         {
-            Destroy(gameObject);
+            planePropeller.transform.Rotate(Vector3.right * 3000 * Time.deltaTime);
+            
+            DestroyOutOfBounds();
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Bullet") && healthPoints > 0)
+        private void DestroyOutOfBounds()
         {
-            --healthPoints;
-            Destroy(other.gameObject);
-            if (healthPoints == 0)
+            transform.Translate(Vector3.left * 3 * Time.deltaTime);
+
+            if (transform.position.z < -7.25f)
             {
                 Destroy(gameObject);
             }
         }
-        else if (other.gameObject.CompareTag("Shield") && healthPoints > 0)
+
+        private void OnTriggerEnter(Collider other)
         {
-            --healthPoints;
-            Destroy(gameObject);
+            if (other.CompareTag("Bullet"))
+            {
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+
+            if (other.CompareTag("Shield"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
