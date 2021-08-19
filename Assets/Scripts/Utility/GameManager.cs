@@ -18,7 +18,10 @@ namespace Utility
         {
             _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Find player and get PlayerController.cs script
             
-            InvokeRepeating("SpawnPowerups", 2, Random.Range(10, 16));
+            InvokeRepeating("SpawnPowerups", 10, Random.Range(15, 23));
+            
+            InvokeRepeating("EnemyHelicopterSpawn", 10, Random.Range(10, 17));
+            InvokeRepeating("EnemyPlaneSpawn", 2, Random.Range(4, 6));
         }
 
         void SpawnPowerups()
@@ -28,6 +31,21 @@ namespace Utility
             if (_playerController.gameOver == false)
             {
                 Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
+            }
+        }
+
+        void EnemyPlaneSpawn()
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(-7.75f, 7.75f), 6, 8); 
+            Instantiate(enemyPlanePrefab, spawnPos, enemyPlanePrefab.transform.rotation);
+        }
+
+        void EnemyHelicopterSpawn()
+        {
+            if (_playerController.gameOver == false)
+            {
+                Vector3 spawnPos = new Vector3(Random.Range(-8.5f, 8.5f), 6, 8);
+                Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);
             }
         }
     }
