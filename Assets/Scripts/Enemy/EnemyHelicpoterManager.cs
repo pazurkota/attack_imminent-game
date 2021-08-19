@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utility;
 
 namespace Enemy
 {
@@ -7,10 +8,14 @@ namespace Enemy
         public GameObject helicopterPropeller;
         public GameObject bulletProjectile;
         [SerializeField] private float healthPoints;
+
+        private GameManager _gameManager;
         
         // Start is called before the first frame update
         void Start()
         {
+            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            
             InvokeRepeating("SpawnBullet", 2, 1.5f);
         }
 
@@ -47,6 +52,7 @@ namespace Enemy
                 if (healthPoints == 0)
                 {
                     Destroy(gameObject);
+                    _gameManager.AddScore(10);
                 }
             }
             
