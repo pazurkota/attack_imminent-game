@@ -69,22 +69,22 @@ namespace Player
 
         void KeepPlayerInBounds()
         {
-            if (transform.position.z < -4.2f)
+            if (transform.position.z < -4.44f)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, -4.2f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, -4.44f);
             }
-            else if (transform.position.z > 4.2f)
+            else if (transform.position.z > 4.05f)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, 4.2f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, 4.05f);
             }
 
-            if (transform.position.x < -9.8f)
+            if (transform.position.x < -7.83f)
             {
-                transform.position = new Vector3(-9.8f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(-7.83f, transform.position.y, transform.position.z);
             }
-            else if (transform.position.x > 9.8f)
+            else if (transform.position.x > 7.83f)
             {
-                transform.position = new Vector3(9.8f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(7.83f, transform.position.y, transform.position.z);
             }
             
         }

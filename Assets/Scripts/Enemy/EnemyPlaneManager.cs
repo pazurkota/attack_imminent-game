@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Enemy
@@ -18,6 +19,20 @@ namespace Enemy
             transform.Translate(Vector3.left * 3 * Time.deltaTime);
 
             if (transform.position.z < -7.25f)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Bullet"))
+            {
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+
+            if (other.CompareTag("Shield"))
             {
                 Destroy(gameObject);
             }
