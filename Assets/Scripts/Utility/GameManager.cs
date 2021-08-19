@@ -1,4 +1,5 @@
 using Player;
+using TMPro;
 using UnityEngine;
 
 namespace Utility
@@ -8,11 +9,14 @@ namespace Utility
         // Variables
         public GameObject enemyPlanePrefab;
         public GameObject enemyHelicopterPrefab;
-        
         public GameObject[] powerupPrefab; // Get all power ups 
-    
+
+        public TextMeshProUGUI scoreText;
+        
         private PlayerController _playerController;
 
+        public int gameScore;
+        
         // Actual Code
         void Start()
         {
@@ -47,6 +51,12 @@ namespace Utility
                 Vector3 spawnPos = new Vector3(Random.Range(-8.5f, 8.5f), 6, 8);
                 Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);
             }
+        }
+
+        public void AddScore(int scoreToAdd)
+        {
+            gameScore += scoreToAdd;
+            scoreText.text = "Score: " + gameScore;
         }
     }
 }
