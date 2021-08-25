@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Utility;
 
 namespace Player
 {
@@ -19,6 +20,7 @@ namespace Player
     
         // Private components
         private AudioSource _playerAudio; // AudioSource component
+        private GameManager _gameManager;
 
         // Public components
         public GameObject playerShield; // Get player shield
@@ -38,6 +40,7 @@ namespace Player
         void Start()
         {
             _playerAudio = GetComponent<AudioSource>(); // Get AudioSource component from player
+            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
     
         void Update()
@@ -58,7 +61,7 @@ namespace Player
 
         void PlaneShoot()
         {
-            if (canShoot && !gameOver) // Check if player can shoot and the game is NOT over
+            if (canShoot && _gameManager.gameRunning) // Check if player can shoot and the game is STILL running
             {
                 Instantiate(bulletProjectile, transform.position, bulletProjectile.transform.rotation); // Instantiate (create) bullet
                 _playerAudio.PlayOneShot(shootSound, 1.0f); // Play sound effect
@@ -132,13 +135,13 @@ namespace Player
                 Destroy(other.gameObject);
             }
 
-            if (playerHealthPoints == 1)
+            if (playerHealthPoints >= 1)
             {
                 _playerAudio.PlayOneShot(criticalCondition, 1.0f);
             }
-            else if (playerHealthPoints == 0)
+            else if (playerHealthPoints <= 0)
             {
-                gameOver = true;
+                _gameManager.GameOver();
                 explosionFX.Play();
                 _playerAudio.PlayOneShot(gameOverSound, 1.0f);
                 gameObject.transform.localScale = new Vector3(0, 0, 0);

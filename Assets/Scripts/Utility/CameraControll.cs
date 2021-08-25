@@ -6,7 +6,7 @@ namespace Utility
     public class CameraControll : MonoBehaviour
     {
         // Variables
-        private PlayerController _playerController; // PlayerController.cs component
+        private GameManager _gameManager;
         private AudioSource _cameraAudio; // AudioSource component
         
         public AudioClip music; // Music played while playing the game
@@ -14,7 +14,7 @@ namespace Utility
         // Actual Code
         void Start()
         {
-            _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Get PlayerController.cs script
+            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             _cameraAudio = GetComponent<AudioSource>(); // Get AudioSource component from camera
             
             _cameraAudio.PlayOneShot(music, 1.0f);
@@ -23,7 +23,7 @@ namespace Utility
         // Update is called once per frame
         void Update()
         {
-            if (_playerController.gameOver) // If game over is true, stop playing the music
+            if (_gameManager.gameRunning == false)
             {
                 _cameraAudio.Stop();
             }
