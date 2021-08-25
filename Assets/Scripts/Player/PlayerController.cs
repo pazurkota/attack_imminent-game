@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using Utility;
 
@@ -30,6 +31,7 @@ namespace Player
         public AudioClip explosionSound; // Explosion sound effect
         public AudioClip criticalCondition; // Critical condition sound effect
         public AudioClip gameOverSound; // Game over sound effect
+        public TextMeshProUGUI livesText; // Player lives track
         
         /*
          * End of variable, down below it's actual code
@@ -57,6 +59,8 @@ namespace Player
         
             PlaneShoot(); // Player cannon can shoot bullets in every 0.5 seconds
             KeepPlayerInBounds(); // Keep player inbounds
+            
+            livesText.text = "Lives: " + playerHealthPoints;
         }
 
         void PlaneShoot()

@@ -10,12 +10,9 @@ namespace Utility
     {
         // GUI Components
         public GameObject credits;
+        public GameObject gameTitle;
+        public GameObject gameOver;
         public TextMeshProUGUI scoreText;
-        public TextMeshProUGUI gameOverText;
-        public Button restartButton;
-        public TextMeshProUGUI gameTitle;
-        public Button startButton;
-        public Button creditsButton;
         
         // Public Components
         public GameObject enemyPlanePrefab;
@@ -82,8 +79,7 @@ namespace Utility
             gameRunning = false;
             _cameraAudioSource.Stop();
             
-            gameOverText.gameObject.SetActive(true);
-            restartButton.gameObject.SetActive(true);
+            gameOver.gameObject.SetActive(true);
         }
 
         public void RestartGame()
@@ -98,26 +94,18 @@ namespace Utility
             _cameraAudioSource.PlayOneShot(gameMusic, 1.0f);
             
             gameTitle.gameObject.SetActive(false);
-            startButton.gameObject.SetActive(false);
-            creditsButton.gameObject.SetActive(false);
         }
 
         public void OpenCredits()
         {
             credits.gameObject.SetActive(true);
-            
             gameTitle.gameObject.SetActive(false);
-            startButton.gameObject.SetActive(false);
-            creditsButton.gameObject.SetActive(false);
         }
 
         public void CloseCredits()
         {
             credits.gameObject.SetActive(false);
-            
             gameTitle.gameObject.SetActive(true);
-            startButton.gameObject.SetActive(true);
-            creditsButton.gameObject.SetActive(true);
         }
     }
 }
