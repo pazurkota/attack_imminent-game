@@ -141,11 +141,12 @@ namespace Player
                 Destroy(other.gameObject);
             }
 
-            if (playerHealthPoints >= 1)
+            if (playerHealthPoints <= 1 && playerHealthPoints > 0)
             {
                 _playerAudio.PlayOneShot(criticalCondition, 1.0f);
             }
-            else if (playerHealthPoints <= 0)
+             
+            if (playerHealthPoints <= 0)
             {
                 _gameManager.GameOver();
                 explosionFX.Play();
