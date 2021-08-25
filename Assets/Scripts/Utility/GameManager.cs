@@ -9,6 +9,7 @@ namespace Utility
     public class GameManager : MonoBehaviour
     {
         // GUI Components
+        public GameObject credits;
         public TextMeshProUGUI scoreText;
         public TextMeshProUGUI gameOverText;
         public Button restartButton;
@@ -99,6 +100,24 @@ namespace Utility
             gameTitle.gameObject.SetActive(false);
             startButton.gameObject.SetActive(false);
             creditsButton.gameObject.SetActive(false);
+        }
+
+        public void OpenCredits()
+        {
+            credits.gameObject.SetActive(true);
+            
+            gameTitle.gameObject.SetActive(false);
+            startButton.gameObject.SetActive(false);
+            creditsButton.gameObject.SetActive(false);
+        }
+
+        public void CloseCredits()
+        {
+            credits.gameObject.SetActive(false);
+            
+            gameTitle.gameObject.SetActive(true);
+            startButton.gameObject.SetActive(true);
+            creditsButton.gameObject.SetActive(true);
         }
     }
 }
