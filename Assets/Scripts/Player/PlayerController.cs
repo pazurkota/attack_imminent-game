@@ -122,6 +122,12 @@ namespace Player
             }
         }
 
+        public void CreateShip()
+        {
+            gameObject.transform.localScale = new Vector3(20, 20, 20);
+            gameObject.transform.position = new Vector3(0, 6, 0);
+        }
+
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("EnemyHelicopter") && playerHealthPoints > 0)

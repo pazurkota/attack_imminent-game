@@ -12,23 +12,29 @@ namespace Utility
         public TextMeshProUGUI scoreText;
         public TextMeshProUGUI gameOverText;
         public Button restartButton;
+        public TextMeshProUGUI gameTitle;
+        public Button startButton;
+        public Button creditsButton;
         
-        // Public Variables
-        public int gameScore;
-        public bool gameRunning;
-
-        // Variables
+        // Public Components
         public GameObject enemyPlanePrefab;
         public GameObject enemyHelicopterPrefab;
         public GameObject[] powerupPrefab; // Get all power ups 
-        
-        
+        public AudioClip gameMusic;
+
+        // Private Components
         private PlayerController _playerController;
+        private AudioSource _cameraAudioSource;
+        
+        // Variables
+        public int gameScore;
+        public bool gameRunning;
 
         // Actual Code
         void Start()
         {
             _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Find player and get PlayerController.cs script
+            _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
             
             InvokeRepeating("SpawnPowerups", 10, Random.Range(15, 23));
             
@@ -73,6 +79,8 @@ namespace Utility
         public void GameOver()
         {
             gameRunning = false;
+            _cameraAudioSource.Stop();
+            
             gameOverText.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(true);
         }
@@ -80,6 +88,17 @@ namespace Utility
         public void RestartGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void StartGame()
+        {
+            gameRunning = true;
+            _playerController.CreateShip();
+            _cameraAudioSource.PlayOneShot(gameMusic, 1.0f);
+            
+            gameTitle.gameObject.SetActive(false);
+            startButton.gameObject.SetActive(false);
+            creditsButton.gameObject.SetActive(false);
         }
     }
 }

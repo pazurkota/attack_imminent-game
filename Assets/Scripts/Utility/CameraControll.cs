@@ -1,4 +1,3 @@
-using Player;
 using UnityEngine;
 
 namespace Utility
@@ -16,17 +15,6 @@ namespace Utility
         {
             _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             _cameraAudio = GetComponent<AudioSource>(); // Get AudioSource component from camera
-            
-            _cameraAudio.PlayOneShot(music, 1.0f);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (_gameManager.gameRunning == false)
-            {
-                _cameraAudio.Stop();
-            }
         }
     }
 }
