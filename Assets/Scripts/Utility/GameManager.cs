@@ -2,7 +2,7 @@ using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace Utility
 {
@@ -12,6 +12,7 @@ namespace Utility
         public GameObject credits;
         public GameObject gameTitle;
         public GameObject gameOver;
+        public GameObject gameStats;
         public TextMeshProUGUI scoreText;
         
         // Public Components
@@ -106,6 +107,15 @@ namespace Utility
         {
             credits.gameObject.SetActive(false);
             gameTitle.gameObject.SetActive(true);
+        }
+
+        public void HideShowStats()
+        {
+            if (gameStats != null)
+            {
+                bool isActive = gameStats.activeSelf;
+                gameStats.SetActive(!isActive);
+            }
         }
     }
 }

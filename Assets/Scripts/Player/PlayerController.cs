@@ -150,7 +150,7 @@ namespace Player
                 _playerAudio.PlayOneShot(criticalCondition, 1.0f);
             }
              
-            if (playerHealthPoints <= 0)
+            if (playerHealthPoints == 0)
             {
                 _gameManager.GameOver();
                 explosionFX.Play();
