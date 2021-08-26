@@ -1,5 +1,7 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using Utility;
 
 namespace Player
 {
@@ -19,6 +21,7 @@ namespace Player
     
         // Private components
         private AudioSource _playerAudio; // AudioSource component
+        private GameManager _gameManager;
 
         // Public components
         public GameObject playerShield; // Get player shield
@@ -28,6 +31,7 @@ namespace Player
         public AudioClip explosionSound; // Explosion sound effect
         public AudioClip criticalCondition; // Critical condition sound effect
         public AudioClip gameOverSound; // Game over sound effect
+        public TextMeshProUGUI livesText; // Player lives track
         
         /*
          * End of variable, down below it's actual code
@@ -38,6 +42,7 @@ namespace Player
         void Start()
         {
             _playerAudio = GetComponent<AudioSource>(); // Get AudioSource component from player
+            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
     
         void Update()
@@ -54,11 +59,13 @@ namespace Player
         
             PlaneShoot(); // Player cannon can shoot bullets in every 0.5 seconds
             KeepPlayerInBounds(); // Keep player inbounds
+            
+            livesText.text = "Lives: " + playerHealthPoints;
         }
 
         void PlaneShoot()
         {
-            if (canShoot && !gameOver) // Check if player can shoot and the game is NOT over
+            if (canShoot && _gameManager.gameRunning) // Check if player can shoot and the game is STILL running
             {
                 Instantiate(bulletProjectile, transform.position, bulletProjectile.transform.rotation); // Instantiate (create) bullet
                 _playerAudio.PlayOneShot(shootSound, 1.0f); // Play sound effect
@@ -119,6 +126,12 @@ namespace Player
             }
         }
 
+        public void CreateShip()
+        {
+            gameObject.transform.localScale = new Vector3(20, 20, 20);
+            gameObject.transform.position = new Vector3(0, 6, 0);
+        }
+
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("EnemyHelicopter") && playerHealthPoints > 0)
@@ -132,13 +145,14 @@ namespace Player
                 Destroy(other.gameObject);
             }
 
-            if (playerHealthPoints == 1)
+            if (playerHealthPoints <= 1 && playerHealthPoints > 0)
             {
                 _playerAudio.PlayOneShot(criticalCondition, 1.0f);
             }
-            else if (playerHealthPoints == 0)
+             
+            if (playerHealthPoints == 0)
             {
-                gameOver = true;
+                _gameManager.GameOver();
                 explosionFX.Play();
                 _playerAudio.PlayOneShot(gameOverSound, 1.0f);
                 gameObject.transform.localScale = new Vector3(0, 0, 0);
