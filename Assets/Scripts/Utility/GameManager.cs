@@ -2,19 +2,18 @@ using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace Utility
 {
     public class GameManager : MonoBehaviour
     {
         // GUI Components
+        public GameObject credits;
+        public GameObject gameTitle;
+        public GameObject gameOver;
+        public GameObject gameStats;
         public TextMeshProUGUI scoreText;
-        public TextMeshProUGUI gameOverText;
-        public Button restartButton;
-        public TextMeshProUGUI gameTitle;
-        public Button startButton;
-        public Button creditsButton;
         
         // Public Components
         public GameObject enemyPlanePrefab;
@@ -81,8 +80,7 @@ namespace Utility
             gameRunning = false;
             _cameraAudioSource.Stop();
             
-            gameOverText.gameObject.SetActive(true);
-            restartButton.gameObject.SetActive(true);
+            gameOver.gameObject.SetActive(true);
         }
 
         public void RestartGame()
@@ -97,8 +95,27 @@ namespace Utility
             _cameraAudioSource.PlayOneShot(gameMusic, 1.0f);
             
             gameTitle.gameObject.SetActive(false);
-            startButton.gameObject.SetActive(false);
-            creditsButton.gameObject.SetActive(false);
+        }
+
+        public void OpenCredits()
+        {
+            credits.gameObject.SetActive(true);
+            gameTitle.gameObject.SetActive(false);
+        }
+
+        public void CloseCredits()
+        {
+            credits.gameObject.SetActive(false);
+            gameTitle.gameObject.SetActive(true);
+        }
+
+        public void HideShowStats()
+        {
+            if (gameStats != null)
+            {
+                bool isActive = gameStats.activeSelf;
+                gameStats.SetActive(!isActive);
+            }
         }
     }
 }
