@@ -2,14 +2,13 @@ using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 namespace Utility
 {
     public class GameManager : MonoBehaviour
     {
         // GUI Components
-        public GameObject credits;
+        public GameObject settings;
         public GameObject gameTitle;
         public GameObject gameOver;
         public GameObject gameStats;
@@ -97,15 +96,15 @@ namespace Utility
             gameTitle.gameObject.SetActive(false);
         }
 
-        public void OpenCredits()
+        public void OpenSettings()
         {
-            credits.gameObject.SetActive(true);
+            settings.gameObject.SetActive(true);
             gameTitle.gameObject.SetActive(false);
         }
 
-        public void CloseCredits()
+        public void CloseSettings()
         {
-            credits.gameObject.SetActive(false);
+            settings.gameObject.SetActive(false);
             gameTitle.gameObject.SetActive(true);
         }
 
