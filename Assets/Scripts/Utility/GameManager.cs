@@ -2,6 +2,7 @@ using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 namespace Utility
 {
@@ -19,6 +20,8 @@ namespace Utility
         public GameObject enemyHelicopterPrefab;
         public GameObject[] powerupPrefab; // Get all power ups 
         public AudioClip gameMusic;
+        public AudioMixer playerMixer;
+        public AudioMixer musicMixer;
 
         // Private Components
         private PlayerController _playerController;
@@ -115,6 +118,18 @@ namespace Utility
                 bool isActive = gameStats.activeSelf;
                 gameStats.SetActive(!isActive);
             }
+        }
+
+        public void SetPlayerVolume(float sliderValue)
+        {
+            playerMixer.SetFloat("PlayerVol", Mathf.Log10(sliderValue) * 20);
+            PlayerPrefs.SetFloat("PlayerVolume", sliderValue);
+        }
+
+        public void SetMusicVolmue(float sliderValue)
+        {
+            musicMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+            PlayerPrefs.SetFloat("MusicVolume", sliderValue);
         }
     }
 }

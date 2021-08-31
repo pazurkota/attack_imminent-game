@@ -667,13 +667,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 400998327}
   m_HandleRect: {fileID: 1358458501}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 828122422}
+        m_TargetAssemblyTypeName: Utility.GameManager, Assembly-CSharp
+        m_MethodName: SetMusicVolmue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &347787687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,7 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be27b75507368448a5c9eb45f9787d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 0}
+  settings: {fileID: 1267046575}
   gameTitle: {fileID: 1083064434}
   gameOver: {fileID: 1802913487}
   gameStats: {fileID: 1698729557}
@@ -1788,6 +1800,8 @@ MonoBehaviour:
   - {fileID: 132260, guid: 510349479745aac4b9209e9326e42601, type: 3}
   - {fileID: 1729945580980676, guid: 7bc251a7285632341a306c70a8f1cfbe, type: 3}
   gameMusic: {fileID: 8300000, guid: 1779437eff66f944bb503f67987a339b, type: 3}
+  playerMixer: {fileID: 24100000, guid: d4aaefc441fbd41b59abf2356f753ac2, type: 2}
+  musicMixer: {fileID: 24100000, guid: 9896f8dbf4320425187a6e5ef6636ea6, type: 2}
   gameScore: 0
   gameRunning: 0
 --- !u!4 &828122423
@@ -2103,7 +2117,7 @@ AudioSource:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 9896f8dbf4320425187a6e5ef6636ea6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.4
@@ -3639,13 +3653,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 495845478}
   m_HandleRect: {fileID: 1204485917}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 828122422}
+        m_TargetAssemblyTypeName: Utility.GameManager, Assembly-CSharp
+        m_MethodName: SetPlayerVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1907758674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,8 +3859,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Attack Imminent! Beta build [BETA-1.4.0] (Enemy Update)\nJazzcat Studios:
-    All rights reserved \xA9"
+  m_Text: "Attack Imminent! Beta build [PRE_RELEASE-1.0]\nJazzcat Studios: All rights
+    reserved \xA9"
 --- !u!222 &1911354210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3929,6 +3955,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 603840245504319239, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d4aaefc441fbd41b59abf2356f753ac2, type: 2}
     - target: {fileID: 3340101877594270065, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: livesText
       value: 
@@ -3937,25 +3967,9 @@ PrefabInstance:
       propertyPath: playerShield
       value: 
       objectReference: {fileID: 1061940373}
-    - target: {fileID: 3340101877594270065, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
-      propertyPath: playerHealthPoints
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: m_LocalPosition.x

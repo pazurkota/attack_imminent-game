@@ -36,7 +36,7 @@ namespace Player
         /*
          * End of variable, down below it's actual code
          * 
-         * Copyright: Interactive studios, all rights reserved ©
+         * Copyright: Jazzcat studios, all rights reserved ©
          */
     
         void Start()
@@ -170,7 +170,7 @@ namespace Player
 
             if (other.gameObject.CompareTag("RepairPowerup"))
             {
-                if (playerHealthPoints < 4)
+                if (playerHealthPoints < 6)
                 {
                     ++playerHealthPoints;
                     Debug.Log($"Added 1 HP! Now you have {playerHealthPoints} HP!");
