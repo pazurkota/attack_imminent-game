@@ -7,19 +7,19 @@ namespace Utility
     {
         public Renderer renderTerrain;
         private float _tempScroll;
-        private PlayerController _playerController;
+        private GameManager _gameManager;
 
         private void Start()
         {
-            _playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (_playerController.gameOver == false)
+            if (_gameManager.gameRunning)
             {
-                _tempScroll += 0.0001f;
+                _tempScroll += 0.1f * Time.deltaTime;
                 renderTerrain.material.mainTextureOffset = new Vector2(0, -_tempScroll);
             }
         }

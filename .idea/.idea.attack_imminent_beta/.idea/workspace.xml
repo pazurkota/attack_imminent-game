@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="04ff50b5-9f9c-4b9c-821a-3e3566b8f618" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Textures/Grass/Grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Textures/Grass/Grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Music.mixer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Music.mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.mixer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.mixer.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/BackgroundRepeater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/BackgroundRepeater.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -75,6 +80,7 @@
       <workItem from="1629233590133" duration="1237000" />
       <workItem from="1629319002129" duration="2078000" />
       <workItem from="1629924171061" duration="739000" />
+      <workItem from="1630694688998" duration="3536000" />
     </task>
     <servers />
   </component>

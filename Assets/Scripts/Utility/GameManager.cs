@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 namespace Utility
 {
@@ -13,7 +14,10 @@ namespace Utility
         public GameObject gameTitle;
         public GameObject gameOver;
         public GameObject gameStats;
+        public GameObject pauseMenu;
         public TextMeshProUGUI scoreText;
+        public Slider playerVolumeSlider;
+        public Slider musicVolumeSlider;
         
         // Public Components
         public GameObject enemyPlanePrefab;
@@ -26,21 +30,29 @@ namespace Utility
         // Private Components
         private PlayerController _playerController;
         private AudioSource _cameraAudioSource;
-        
+
         // Variables
         public int gameScore;
         public bool gameRunning;
+        public bool isGamePaused;
 
         // Actual Code
         void Start()
         {
             _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Find player and get PlayerController.cs script
-            _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
-            
+            _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>(); // Get camera Audio Source component
+
             InvokeRepeating("SpawnPowerups", 10, Random.Range(15, 23));
-            
             InvokeRepeating("EnemyHelicopterSpawn", 10, Random.Range(10, 17));
             InvokeRepeating("EnemyPlaneSpawn", 2, Random.Range(4, 6));
+            
+            playerVolumeSlider.value = PlayerPrefs.GetFloat("PlayerVolume", 0.75f);
+            musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        }
+
+        private void Update()
+        {
+            PauseMenu();
         }
 
         void SpawnPowerups()
@@ -102,13 +114,22 @@ namespace Utility
         public void OpenSettings()
         {
             settings.gameObject.SetActive(true);
+            pauseMenu.gameObject.SetActive(false);
             gameTitle.gameObject.SetActive(false);
         }
 
         public void CloseSettings()
         {
             settings.gameObject.SetActive(false);
-            gameTitle.gameObject.SetActive(true);
+
+            if (isGamePaused)
+            {
+                pauseMenu.gameObject.SetActive(true);
+            }
+            else
+            {
+                gameTitle.gameObject.SetActive(true);
+            }
         }
 
         public void HideShowStats()
@@ -130,6 +151,31 @@ namespace Utility
         {
             musicMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
             PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+        }
+
+        private void PauseMenu()
+        {
+            if (gameRunning && Input.GetKeyDown(KeyCode.Escape))
+            {
+                isGamePaused = !isGamePaused;
+                PauseSettings();
+            }
+        }
+
+        private void PauseSettings()
+        {
+            if (isGamePaused)
+            {
+                pauseMenu.gameObject.SetActive(true);
+                AudioListener.pause = true;
+                Time.timeScale = 0.0f;
+            }
+            else if(settings.gameObject.activeInHierarchy == false)
+            {
+                pauseMenu.gameObject.SetActive(false);
+                AudioListener.pause = false;
+                Time.timeScale = 1.0f;
+            }
         }
     }
 }
