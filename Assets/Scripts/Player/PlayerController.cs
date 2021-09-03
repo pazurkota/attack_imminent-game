@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -145,12 +146,12 @@ namespace Player
                 Destroy(other.gameObject);
             }
 
-            if (playerHealthPoints <= 1 && playerHealthPoints > 0)
+            if (Math.Abs(playerHealthPoints - 1) < 1)
             {
                 _playerAudio.PlayOneShot(criticalCondition, 1.0f);
             }
              
-            if (playerHealthPoints == 0)
+            if (playerHealthPoints <= 0)
             {
                 _gameManager.GameOver();
                 explosionFX.Play();

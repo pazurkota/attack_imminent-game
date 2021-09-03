@@ -39,6 +39,8 @@ namespace Utility
         // Actual Code
         void Start()
         {
+            Debug.Log("Game has been activated");
+            
             _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Find player and get PlayerController.cs script
             _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>(); // Get camera Audio Source component
 
@@ -59,7 +61,7 @@ namespace Utility
         {
             if (gameRunning)
             {
-                Vector3 spawnPos = new Vector3(Random.Range(-9.8f, 9.8f), 6, Random.Range(-4.5f, 4.5f));
+                Vector3 spawnPos = new Vector3(Random.Range(-8.45f, 8.45f), 6, Random.Range(-4.4f, 4.4f));
                 int randomPowerup = Random.Range(0, powerupPrefab.Length);
                 Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
             }
@@ -78,7 +80,7 @@ namespace Utility
         {
             if (gameRunning)
             {
-                Vector3 spawnPos = new Vector3(Random.Range(-8.5f, 8.5f), 6, 8);
+                Vector3 spawnPos = new Vector3(Random.Range(-8.1f, 8.1f), 6, 8);
                 Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);
             }
         }
