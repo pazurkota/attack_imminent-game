@@ -6,7 +6,7 @@
 ## 👾 Technical information
 * Unity version: 2020.3.12f1
 * Game language: en_US
-* Current version: PRE_RELEASE-1.0
+* Current version: PRE_RELEASE-2.0
 
 ## 🔧 Setup
 ### Using ZIP folder:
@@ -20,6 +20,8 @@
 * Clone repository to your git client
 * Run unity hub and click "Open" button.
 * Select repo folder destination.
+
+#### OR you can just simply play this game: is not avaliable yet :( come back later!
 
 ## 🎓 License and copyright
 This project is under [Apache License 2.0](LICENSE.md)
