@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4565012359782041809}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   explosionSound: {fileID: 8300000, guid: d49c2c7460ff52f4d9789707159cbea3, type: 3}
   criticalCondition: {fileID: 8300000, guid: 7d7c02a2de72f474ba2c6a8beac2051c, type: 3}
   gameOverSound: {fileID: 8300000, guid: a41aa6c6090d87940b93cdd3352d0981, type: 3}
+  livesText: {fileID: 0}
 --- !u!82 &603840245504319239
 AudioSource:
   m_ObjectHideFlags: 0
@@ -149,7 +150,7 @@ AudioSource:
   m_GameObject: {fileID: 4565012359782041809}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1585096362822531552, guid: 2931444b27e594f3a873d50325cf9c88, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

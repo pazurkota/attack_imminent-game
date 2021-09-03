@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Utility;
 
@@ -41,6 +40,14 @@ namespace Enemy
             if (other.CompareTag("Shield"))
             {
                 Destroy(gameObject);
+            }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("EnemyHelicopter") || other.gameObject.CompareTag("EnemyPlane"))
+            {
+                transform.position = new Vector3(Random.Range(-2, 2), transform.position.y, transform.position.z);
             }
         }
     }
