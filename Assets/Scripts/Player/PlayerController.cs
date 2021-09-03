@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -36,7 +37,7 @@ namespace Player
         /*
          * End of variable, down below it's actual code
          * 
-         * Copyright: Interactive studios, all rights reserved ©
+         * Copyright: Jazzcat studios, all rights reserved ©
          */
     
         void Start()
@@ -145,12 +146,12 @@ namespace Player
                 Destroy(other.gameObject);
             }
 
-            if (playerHealthPoints <= 1 && playerHealthPoints > 0)
+            if (Math.Abs(playerHealthPoints - 1) < 1)
             {
                 _playerAudio.PlayOneShot(criticalCondition, 1.0f);
             }
              
-            if (playerHealthPoints == 0)
+            if (playerHealthPoints <= 0)
             {
                 _gameManager.GameOver();
                 explosionFX.Play();
@@ -170,7 +171,7 @@ namespace Player
 
             if (other.gameObject.CompareTag("RepairPowerup"))
             {
-                if (playerHealthPoints < 4)
+                if (playerHealthPoints < 6)
                 {
                     ++playerHealthPoints;
                     Debug.Log($"Added 1 HP! Now you have {playerHealthPoints} HP!");
