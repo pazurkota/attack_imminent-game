@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Utility
@@ -18,6 +19,9 @@ namespace Utility
         public TextMeshProUGUI scoreText;
         public Slider playerVolumeSlider;
         public Slider musicVolumeSlider;
+        
+        // GUI Animators
+        [FormerlySerializedAs("_gameOverAnimator")] public Animator gameOverAnimator;
         
         // Public Components
         public GameObject enemyPlanePrefab;
@@ -35,6 +39,7 @@ namespace Utility
         public int gameScore;
         public bool gameRunning;
         public bool isGamePaused;
+        private static readonly int IsGameOver = Animator.StringToHash("isGameOver");
 
         // Actual Code
         void Start()
@@ -95,6 +100,7 @@ namespace Utility
         {
             gameRunning = false;
             _cameraAudioSource.Stop();
+            gameOverAnimator.SetBool(IsGameOver, true);
             
             gameOver.gameObject.SetActive(true);
         }
