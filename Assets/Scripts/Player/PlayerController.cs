@@ -33,7 +33,8 @@ namespace Player
         public AudioClip criticalCondition; // Critical condition sound effect
         public AudioClip gameOverSound; // Game over sound effect
         public TextMeshProUGUI livesText; // Player lives track
-        
+        public Animator playerAnimation;
+
         /*
          * End of variable, down below it's actual code
          * 
@@ -48,16 +49,7 @@ namespace Player
     
         void Update()
         {
-            // Move player in X axis (horizontal)
-            _horizontalInput = Input.GetAxis("Horizontal");
-            transform.Translate(Vector3.right * speed * _horizontalInput * Time.deltaTime);
-        
-            // Move player in Z axis (vertical)
-            _verticalInput = Input.GetAxis("Vertical");
-            transform.Translate(Vector3.down * speed * _verticalInput * Time.deltaTime);
-
-            playerShield.transform.position = transform.position;
-        
+            PlayerMovement(); // Player movement
             PlaneShoot(); // Player cannon can shoot bullets in every 0.5 seconds
             KeepPlayerInBounds(); // Keep player inbounds
             
@@ -75,6 +67,27 @@ namespace Player
             }
         }
 
+        void PlayerMovement()
+        {
+            if (_gameManager.gameRunning)
+            {
+                // Move player in X axis (horizontal)
+                _horizontalInput = Input.GetAxis("Horizontal");
+                transform.Translate(Vector3.right * speed * _horizontalInput * Time.deltaTime);
+                playerAnimation.SetFloat("TurnRadius", _horizontalInput);
+                
+                _verticalInput = Input.GetAxis("Vertical");
+                transform.Translate(Vector3.down * speed * _verticalInput * Time.deltaTime);
+
+                if (Math.Abs(transform.position.y - 6) > 0)
+                {
+                    transform.position = new Vector3(transform.position.x, 6, transform.position.z);
+                }
+                
+                playerShield.transform.position = transform.position;
+            }
+        }
+        
         void KeepPlayerInBounds()
         {
             if (transform.position.z < -4.44f)

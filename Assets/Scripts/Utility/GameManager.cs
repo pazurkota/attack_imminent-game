@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Utility
@@ -16,8 +17,12 @@ namespace Utility
         public GameObject gameStats;
         public GameObject pauseMenu;
         public TextMeshProUGUI scoreText;
+        public TextMeshProUGUI highScoreText;
         public Slider playerVolumeSlider;
         public Slider musicVolumeSlider;
+        
+        // GUI Animators
+        [FormerlySerializedAs("_gameOverAnimator")] public Animator gameOverAnimator;
         
         // Public Components
         public GameObject enemyPlanePrefab;
@@ -33,8 +38,10 @@ namespace Utility
 
         // Variables
         public int gameScore;
+        public int highScore;
         public bool gameRunning;
         public bool isGamePaused;
+        private static readonly int IsGameOver = Animator.StringToHash("isGameOver");
 
         // Actual Code
         void Start()
@@ -55,6 +62,7 @@ namespace Utility
         private void Update()
         {
             PauseMenu();
+            SaveHighScore();
         }
 
         void SpawnPowerups()
@@ -95,8 +103,11 @@ namespace Utility
         {
             gameRunning = false;
             _cameraAudioSource.Stop();
+            gameOverAnimator.SetBool(IsGameOver, true);
             
             gameOver.gameObject.SetActive(true);
+            int score = PlayerPrefs.GetInt("Highscore");
+            highScoreText.text = "Highscore: " + score;
         }
 
         public void RestartGame()
@@ -140,6 +151,15 @@ namespace Utility
             {
                 bool isActive = gameStats.activeSelf;
                 gameStats.SetActive(!isActive);
+            }
+        }
+
+        void SaveHighScore()
+        {
+            if (gameScore > highScore)
+            {
+                highScore = gameScore;
+                PlayerPrefs.SetInt("Highscore", highScore);
             }
         }
 
