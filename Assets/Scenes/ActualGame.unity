@@ -4478,7 +4478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Attack Imminent! Beta build [PRE_RELEASE-1.0]\nJazzcat Studios: All rights
+  m_Text: "Attack Imminent! Beta build [RELEASE-1.0.0]\nJazzcat Studios: All rights
     reserved \xA9"
 --- !u!222 &1911354210
 CanvasRenderer:

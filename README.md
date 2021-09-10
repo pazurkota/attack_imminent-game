@@ -5,7 +5,7 @@
 ## Technical information
 * Unity version: 2020.3.12f1
 * Game language: en_US
-* Current version: BETA-1.3.0
+* Current version: RELEASE-1.0.0
 
 ## Setup
 ### Using ZIP folder:
