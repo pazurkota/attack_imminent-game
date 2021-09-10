@@ -21,7 +21,7 @@
 * Run unity hub and click "Open" button.
 * Select repo folder destination.
 
-#### OR you can just simply play this game: is not avaliable yet :( come back later!
+#### OR you can just simply play this game: https://play.unity.com/mg/other/attack-imminent-a-simple-shoot-em-up
 
 ## 🎓 License and copyright
 This project is under [Apache License 2.0](LICENSE.md)
