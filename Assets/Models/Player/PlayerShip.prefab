@@ -142,6 +142,7 @@ MonoBehaviour:
   criticalCondition: {fileID: 8300000, guid: 7d7c02a2de72f474ba2c6a8beac2051c, type: 3}
   gameOverSound: {fileID: 8300000, guid: a41aa6c6090d87940b93cdd3352d0981, type: 3}
   livesText: {fileID: 0}
+  playerAnimation: {fileID: 3718644394542915910}
 --- !u!82 &603840245504319239
 AudioSource:
   m_ObjectHideFlags: 0
