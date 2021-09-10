@@ -17,6 +17,7 @@ namespace Utility
         public GameObject gameStats;
         public GameObject pauseMenu;
         public TextMeshProUGUI scoreText;
+        public TextMeshProUGUI highScoreText;
         public Slider playerVolumeSlider;
         public Slider musicVolumeSlider;
         
@@ -37,6 +38,7 @@ namespace Utility
 
         // Variables
         public int gameScore;
+        public int highScore;
         public bool gameRunning;
         public bool isGamePaused;
         private static readonly int IsGameOver = Animator.StringToHash("isGameOver");
@@ -60,6 +62,7 @@ namespace Utility
         private void Update()
         {
             PauseMenu();
+            SaveHighScore();
         }
 
         void SpawnPowerups()
@@ -103,6 +106,8 @@ namespace Utility
             gameOverAnimator.SetBool(IsGameOver, true);
             
             gameOver.gameObject.SetActive(true);
+            int score = PlayerPrefs.GetInt("Highscore");
+            highScoreText.text = "Highscore: " + score;
         }
 
         public void RestartGame()
@@ -146,6 +151,15 @@ namespace Utility
             {
                 bool isActive = gameStats.activeSelf;
                 gameStats.SetActive(!isActive);
+            }
+        }
+
+        void SaveHighScore()
+        {
+            if (gameScore > highScore)
+            {
+                highScore = gameScore;
+                PlayerPrefs.SetInt("Highscore", highScore);
             }
         }
 

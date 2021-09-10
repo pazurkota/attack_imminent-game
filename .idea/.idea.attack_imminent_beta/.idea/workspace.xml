@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="04ff50b5-9f9c-4b9c-821a-3e3566b8f618" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.attack_imminent_beta/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAnimation.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAnimation.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/StopTurnRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/StopTurnRight.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/TurnRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/TurnRight.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Models/Player/PlayerShip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Player/PlayerShip.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ActualGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127e81e1cb3441cc97d26b1910daae7713b000/55/344af7f3/Component.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
