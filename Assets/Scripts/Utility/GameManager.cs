@@ -54,16 +54,10 @@ namespace Utility
         void Start()
         {
             Debug.Log("Game has been activated");
-            
-            _playerController = GameObject.Find("Player").GetComponent<PlayerController>(); // Find player and get PlayerController.cs script
             _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>(); // Get camera Audio Source component
-
-            InvokeRepeating("SpawnPowerups", 10, Random.Range(15, 23));
-            InvokeRepeating("EnemyHelicopterSpawn", 10, Random.Range(10, 17));
-            InvokeRepeating("EnemyPlaneSpawn", 2, Random.Range(4, 6));
             
-            // playerVolumeSlider.value = PlayerPrefs.GetFloat("PlayerVolume", 0.75f);
-            // musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+            InvokeRepeating("EnemyPlaneSpawn", 3, Random.Range(2, 4));
+            InvokeRepeating("EnemyHelicopterSpawn", 7, Random.Range(5, 10));
         }
 
         private void Update()
@@ -74,12 +68,9 @@ namespace Utility
 
         void SpawnPowerups()
         {
-            if (gameRunning)
-            {
-                Vector3 spawnPos = new Vector3(Random.Range(-8.45f, 8.45f), 6, Random.Range(-4.4f, 4.4f));
-                int randomPowerup = Random.Range(0, powerupPrefab.Length);
-                Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
-            }
+            Vector3 spawnPos = new Vector3(Random.Range(-8.45f, 8.45f), 6, Random.Range(-4.4f, 4.4f));
+            int randomPowerup = Random.Range(0, powerupPrefab.Length);
+            Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
         }
 
         void EnemyPlaneSpawn()
@@ -96,7 +87,7 @@ namespace Utility
             if (gameRunning)
             {
                 Vector3 spawnPos = new Vector3(Random.Range(-8.1f, 8.1f), 6, 8);
-                Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);
+                Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);   
             }
         }
 
@@ -124,10 +115,7 @@ namespace Utility
         public void StartGame()
         {
             gameRunning = true;
-            _playerController.CreateShip();
-            _cameraAudioSource.PlayOneShot(gameMusic, 1.0f);
-            
-            // gameTitle.gameObject.SetActive(false);
+            SceneManager.LoadScene(1);
         }
 
         void SaveHighScore()

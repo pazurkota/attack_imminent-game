@@ -152,16 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be27b75507368448a5c9eb45f9787d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 0}
-  gameTitle: {fileID: 0}
-  gameOver: {fileID: 0}
-  gameStats: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  scoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
-  playerVolumeSlider: {fileID: 0}
-  musicVolumeSlider: {fileID: 0}
-  gameOverAnimator: {fileID: 0}
   enemyPlanePrefab: {fileID: 2480941734362383583, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
   enemyHelicopterPrefab: {fileID: 8277268270088658548, guid: 16ac732b58c8753419a01038b1642b0d, type: 3}
   powerupPrefab:
@@ -659,8 +649,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 22014436}
+        m_TargetAssemblyTypeName: Utility.GameManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:

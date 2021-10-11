@@ -7,13 +7,5 @@ using Utility;
 
 public class UIManager : MonoBehaviour
 {   
-
-    // Other Components
-    public ScriptableObject PlayerController;
-    
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-        GameManager.Instance.gameRunning = true;
-    }
+    // This script will be used someday...
 }
