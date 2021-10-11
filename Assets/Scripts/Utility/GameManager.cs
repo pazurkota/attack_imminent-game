@@ -1,3 +1,4 @@
+using System;
 using Player;
 using TMPro;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Utility
 {
@@ -42,6 +44,20 @@ namespace Utility
         public bool gameRunning;
         public bool isGamePaused;
         private static readonly int IsGameOver = Animator.StringToHash("isGameOver");
+
+        public static GameManager Instance;
+        
+        private void Awake() // Access GameManager without giving a reference
+        {
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
         // Actual Code
         void Start()
