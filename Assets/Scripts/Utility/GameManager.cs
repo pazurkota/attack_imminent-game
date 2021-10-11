@@ -13,18 +13,9 @@ namespace Utility
     public class GameManager : MonoBehaviour
     {
         // GUI Components
-        public GameObject settings;
-        public GameObject gameTitle;
-        public GameObject gameOver;
-        public GameObject gameStats;
-        public GameObject pauseMenu;
-        public TextMeshProUGUI scoreText;
-        public TextMeshProUGUI highScoreText;
-        public Slider playerVolumeSlider;
-        public Slider musicVolumeSlider;
-        
+
         // GUI Animators
-        [FormerlySerializedAs("_gameOverAnimator")] public Animator gameOverAnimator;
+        
         
         // Public Components
         public GameObject enemyPlanePrefab;
@@ -71,8 +62,8 @@ namespace Utility
             InvokeRepeating("EnemyHelicopterSpawn", 10, Random.Range(10, 17));
             InvokeRepeating("EnemyPlaneSpawn", 2, Random.Range(4, 6));
             
-            playerVolumeSlider.value = PlayerPrefs.GetFloat("PlayerVolume", 0.75f);
-            musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+            // playerVolumeSlider.value = PlayerPrefs.GetFloat("PlayerVolume", 0.75f);
+            // musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         }
 
         private void Update()
@@ -112,18 +103,17 @@ namespace Utility
         public void AddScore(int scoreToAdd)
         {
             gameScore += scoreToAdd;
-            scoreText.text = "Score: " + gameScore;
+            // scoreText.text = "Score: " + gameScore;
         }
 
         public void GameOver()
         {
             gameRunning = false;
             _cameraAudioSource.Stop();
-            gameOverAnimator.SetBool(IsGameOver, true);
-            
-            gameOver.gameObject.SetActive(true);
+
+            // gameOver.gameObject.SetActive(true);
             int score = PlayerPrefs.GetInt("Highscore");
-            highScoreText.text = "Highscore: " + score;
+            // highScoreText.text = "Highscore: " + score;
         }
 
         public void RestartGame()
@@ -137,37 +127,7 @@ namespace Utility
             _playerController.CreateShip();
             _cameraAudioSource.PlayOneShot(gameMusic, 1.0f);
             
-            gameTitle.gameObject.SetActive(false);
-        }
-
-        public void OpenSettings()
-        {
-            settings.gameObject.SetActive(true);
-            pauseMenu.gameObject.SetActive(false);
-            gameTitle.gameObject.SetActive(false);
-        }
-
-        public void CloseSettings()
-        {
-            settings.gameObject.SetActive(false);
-
-            if (isGamePaused)
-            {
-                pauseMenu.gameObject.SetActive(true);
-            }
-            else
-            {
-                gameTitle.gameObject.SetActive(true);
-            }
-        }
-
-        public void HideShowStats()
-        {
-            if (gameStats != null)
-            {
-                bool isActive = gameStats.activeSelf;
-                gameStats.SetActive(!isActive);
-            }
+            // gameTitle.gameObject.SetActive(false);
         }
 
         void SaveHighScore()
@@ -196,23 +156,6 @@ namespace Utility
             if (gameRunning && Input.GetKeyDown(KeyCode.Escape))
             {
                 isGamePaused = !isGamePaused;
-                PauseSettings();
-            }
-        }
-
-        private void PauseSettings()
-        {
-            if (isGamePaused)
-            {
-                pauseMenu.gameObject.SetActive(true);
-                AudioListener.pause = true;
-                Time.timeScale = 0.0f;
-            }
-            else if(settings.gameObject.activeInHierarchy == false)
-            {
-                pauseMenu.gameObject.SetActive(false);
-                AudioListener.pause = false;
-                Time.timeScale = 1.0f;
             }
         }
     }
