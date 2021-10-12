@@ -1,22 +1,16 @@
-using System;
 using Player;
-using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Utility
 {
     public class GameManager : MonoBehaviour
-    {
-        // GUI Components
+    {        
+        // Menu Components
 
-        // GUI Animators
-        
-        
         // Public Components
         public GameObject enemyPlanePrefab;
         public GameObject enemyHelicopterPrefab;
@@ -116,6 +110,20 @@ namespace Utility
         {
             gameRunning = true;
             SceneManager.LoadScene(1);
+        }
+
+        public void Exit()
+        {
+#if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+#else
+            Application.Quit();
+#endif
+        }
+
+        public void EnterSetting()
+        {
+            
         }
 
         void SaveHighScore()
