@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5e2103d1fdde6f4c89537cdb2582f8b, type: 2}
-  m_sharedMaterial: {fileID: -4276576455907676469, guid: c5e2103d1fdde6f4c89537cdb2582f8b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c37a0543999ae8547a2e7c7fec8d13af, type: 2}
+  m_sharedMaterial: {fileID: 3073776324995191864, guid: c37a0543999ae8547a2e7c7fec8d13af, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -415,16 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be27b75507368448a5c9eb45f9787d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 0}
-  gameTitle: {fileID: 0}
-  gameOver: {fileID: 0}
-  gameStats: {fileID: 1698729557}
-  pauseMenu: {fileID: 790502497}
-  scoreText: {fileID: 52938052}
-  highScoreText: {fileID: 0}
-  playerVolumeSlider: {fileID: 0}
-  musicVolumeSlider: {fileID: 0}
-  gameOverAnimator: {fileID: 0}
   enemyPlanePrefab: {fileID: 2480941734362383583, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
   enemyHelicopterPrefab: {fileID: 8277268270088658548, guid: 16ac732b58c8753419a01038b1642b0d, type: 3}
   powerupPrefab:
@@ -1237,8 +1227,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lives: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5e2103d1fdde6f4c89537cdb2582f8b, type: 2}
-  m_sharedMaterial: {fileID: -4276576455907676469, guid: c5e2103d1fdde6f4c89537cdb2582f8b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c37a0543999ae8547a2e7c7fec8d13af, type: 2}
+  m_sharedMaterial: {fileID: 3073776324995191864, guid: c37a0543999ae8547a2e7c7fec8d13af, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1346,7 +1336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146.7, y: -246.2}
+  m_AnchoredPosition: {x: 146.7, y: -239.21}
   m_SizeDelta: {x: 1084.31, y: 90.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911354209
@@ -1370,7 +1360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 83a3bd67351e91748907e67d5edfa28c, type: 3}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
@@ -1382,8 +1372,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Attack Imminent! Beta build [RELEASE-1.0.0]\nJazzcat Studios: All rights
-    reserved \xA9"
+  m_Text: "Attack Imminent! Development build [devbuild-release-2.0.0]\nCurrent branch:
+    feature/rewrite-game\nJazzcat Studios: All rights reserved \xA9"
 --- !u!222 &1911354210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1410,6 +1400,18 @@ PrefabInstance:
     - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3752059389220213355, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: m_LocalPosition.x
