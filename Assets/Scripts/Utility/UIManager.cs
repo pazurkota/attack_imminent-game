@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Player;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utility;
@@ -27,13 +28,34 @@ public class UIManager : MonoBehaviour
 
     public void OpenSettings()
     {
-        mainMenu.SetActive(false);
-        settingsMenu.SetActive(true);
+        if (mainMenu != null && settingsMenu != null)
+        {
+            mainMenu.SetActive(false);
+            settingsMenu.SetActive(true);
+        }
     }
 
     public void CloseSettings()
     {
-        mainMenu.SetActive(true);
-        settingsMenu.SetActive(false);
+        if (mainMenu != null && settingsMenu != null)
+        {
+            mainMenu.SetActive(true);
+            settingsMenu.SetActive(false);   
+        }
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(1);
+        GameManager.Instance.gameRunning = true;
+    }
+    
+    public void Exit()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+            Application.Quit();
+#endif
     }
 }

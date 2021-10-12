@@ -8,9 +8,7 @@ using Random = UnityEngine.Random;
 namespace Utility
 {
     public class GameManager : MonoBehaviour
-    {        
-        // Menu Components
-
+    {
         // Public Components
         public GameObject enemyPlanePrefab;
         public GameObject enemyHelicopterPrefab;
@@ -56,7 +54,6 @@ namespace Utility
 
         private void Update()
         {
-            PauseMenu();
             SaveHighScore();
         }
 
@@ -101,31 +98,6 @@ namespace Utility
             // highScoreText.text = "Highscore: " + score;
         }
 
-        public void RestartGame()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
-        public void StartGame()
-        {
-            gameRunning = true;
-            SceneManager.LoadScene(1);
-        }
-
-        public void Exit()
-        {
-#if UNITY_EDITOR
-            EditorApplication.ExitPlaymode();
-#else
-            Application.Quit();
-#endif
-        }
-
-        public void EnterSetting()
-        {
-            
-        }
-
         void SaveHighScore()
         {
             if (gameScore > highScore)
@@ -145,14 +117,6 @@ namespace Utility
         {
             musicMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
             PlayerPrefs.SetFloat("MusicVolume", sliderValue);
-        }
-
-        private void PauseMenu()
-        {
-            if (gameRunning && Input.GetKeyDown(KeyCode.Escape))
-            {
-                isGamePaused = !isGamePaused;
-            }
         }
     }
 }

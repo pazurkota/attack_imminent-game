@@ -1336,7 +1336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146.7, y: -246.2}
+  m_AnchoredPosition: {x: 146.7, y: -239.21}
   m_SizeDelta: {x: 1084.31, y: 90.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911354209
@@ -1372,8 +1372,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Attack Imminent! Development build [devbuild-release-2.0.0]\nJazzcat Studios:
-    All rights reserved \xA9"
+  m_Text: "Attack Imminent! Development build [devbuild-release-2.0.0]\nCurrent branch:
+    feature/rewrite-game\nJazzcat Studios: All rights reserved \xA9"
 --- !u!222 &1911354210
 CanvasRenderer:
   m_ObjectHideFlags: 0
