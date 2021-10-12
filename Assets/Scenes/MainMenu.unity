@@ -601,6 +601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ba21ce0408e6c4d94591bf290ce407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicVol: {fileID: 24100000, guid: 9896f8dbf4320425187a6e5ef6636ea6, type: 2}
+  playerVol: {fileID: 24100000, guid: d4aaefc441fbd41b59abf2356f753ac2, type: 2}
+  musicVolSlider: {fileID: 1640092458}
+  playerVolSlider: {fileID: 1295006191}
   mainMenu: {fileID: 316067272}
   settingsMenu: {fileID: 1326750282}
 --- !u!4 &209857234
@@ -1791,13 +1795,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 85594989}
   m_HandleRect: {fileID: 345373526}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.0001
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 209857233}
+        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
+        m_MethodName: SetPlayerVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1309634558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,13 +2168,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 2018048653}
   m_HandleRect: {fileID: 750509891}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.0001
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 209857233}
+        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1644410940
 GameObject:
   m_ObjectHideFlags: 0
