@@ -26,7 +26,6 @@ namespace Utility
         public int highScore;
         public bool gameRunning;
         public bool isGamePaused;
-        private static readonly int IsGameOver = Animator.StringToHash("isGameOver");
 
         public static GameManager Instance;
         
@@ -55,6 +54,7 @@ namespace Utility
         private void Update()
         {
             SaveHighScore();
+            SetDeltaTime();
         }
 
         void SpawnPowerups()
@@ -107,16 +107,21 @@ namespace Utility
             }
         }
 
-        public void SetPlayerVolume(float sliderValue)
+        public void PauseGame()
         {
-            playerMixer.SetFloat("PlayerVol", Mathf.Log10(sliderValue) * 20);
-            PlayerPrefs.SetFloat("PlayerVolume", sliderValue);
+            isGamePaused = !isGamePaused;
         }
 
-        public void SetMusicVolmue(float sliderValue)
+        public void SetDeltaTime()
         {
-            musicMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
-            PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+            if (isGamePaused)
+            {
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
         }
     }
 }
