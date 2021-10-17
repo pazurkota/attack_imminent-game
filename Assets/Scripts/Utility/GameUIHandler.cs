@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Utility
@@ -9,6 +10,7 @@ namespace Utility
         // UI Components
         [SerializeField] private TMP_Text scoreText;
         [SerializeField] private Text pauseMenuText;
+        [SerializeField] private Text gameOverScore;
         [SerializeField] private GameObject gameOverUi;
         
 
@@ -43,7 +45,19 @@ namespace Utility
             if (GameManager.Instance.gameRunning == false)
             {
                 gameOverUi.SetActive(true);
+                gameOverScore.text = "Your score: " + GameManager.Instance.gameScore + "\nBest score: " + GameManager.Instance.highScore;
             }
+        }
+
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(1);
+            GameManager.Instance.gameScore = 0;
+        }
+
+        public void ReturnToMainMenu()
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

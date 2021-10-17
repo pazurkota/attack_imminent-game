@@ -13,9 +13,6 @@ namespace Utility
         public GameObject enemyPlanePrefab;
         public GameObject enemyHelicopterPrefab;
         public GameObject[] powerupPrefab; // Get all power ups 
-        public AudioClip gameMusic;
-        public AudioMixer playerMixer;
-        public AudioMixer musicMixer;
 
         // Private Components
         private PlayerController _playerController;

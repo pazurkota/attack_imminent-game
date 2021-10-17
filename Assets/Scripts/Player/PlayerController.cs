@@ -176,11 +176,11 @@ namespace Player
                 if (playerHealthPoints < 6)
                 {
                     ++playerHealthPoints;
-                    Debug.Log($"Added 1 HP! Now you have {playerHealthPoints} HP!");
+                    Debug.Log($"[GAME] Added 1 HP! Now you have {playerHealthPoints} HP!");
                 }
                 else
                 {
-                    Debug.Log("You have already max hp!");
+                    Debug.Log("[GAME] You have already max HP!");
                 }
                 Destroy(other.gameObject);
             }
