@@ -16,7 +16,6 @@ namespace Utility
 
         // Private Components
         private PlayerController _playerController;
-        private AudioSource _cameraAudioSource;
 
         // Variables
         public int gameScore;
@@ -43,8 +42,7 @@ namespace Utility
         void Start()
         {
             Debug.Log($"[GAME] Game has been started (current scene opened: {SceneManager.GetActiveScene().name}.unity)"); // Show if game has started + get scene name
-            _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>(); // Get camera Audio Source component
-            
+
             // InvokeRepeating 
             InvokeRepeating(nameof(EnemyPlaneSpawn), 3, Random.Range(2, 4));
             InvokeRepeating(nameof(EnemyHelicopterSpawn), 7, Random.Range(5, 10));
@@ -99,7 +97,6 @@ namespace Utility
         public void GameOver()
         {
             gameRunning = false;
-            _cameraAudioSource.Stop();
         }
 
         // Save the highscore 

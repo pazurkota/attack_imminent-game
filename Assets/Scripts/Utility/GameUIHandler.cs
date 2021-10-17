@@ -13,6 +13,8 @@ namespace Utility
         [SerializeField] private Text gameOverScore;
         [SerializeField] private GameObject gameOverUi;
         
+        // Audio Components
+        [SerializeField] private AudioSource cameraAudioSource;
 
         // Start is called before the first frame update
         void Start()
@@ -46,6 +48,7 @@ namespace Utility
             {
                 gameOverUi.SetActive(true);
                 gameOverScore.text = "Your score: " + GameManager.Instance.gameScore + "\nBest score: " + GameManager.Instance.highScore;
+                cameraAudioSource.Stop();
             }
         }
 
@@ -53,6 +56,8 @@ namespace Utility
         {
             SceneManager.LoadScene(1);
             GameManager.Instance.gameScore = 0;
+            GameManager.Instance.gameRunning = true;
+            gameOverUi.SetActive(false);
         }
 
         public void ReturnToMainMenu()

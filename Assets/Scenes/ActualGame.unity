@@ -1343,6 +1343,7 @@ MonoBehaviour:
   pauseMenuText: {fileID: 944333513}
   gameOverScore: {fileID: 1360733099}
   gameOverUi: {fileID: 1062614367}
+  cameraAudioSource: {fileID: 963194229}
 --- !u!1 &1061940373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1062614368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2142,7 +2143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1911354208
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2159,7 +2160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146.7, y: -239.21}
+  m_AnchoredPosition: {x: 146.7, y: -248.24}
   m_SizeDelta: {x: 1084.31, y: 90.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911354209
@@ -2195,8 +2196,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Attack Imminent! Development build [devbuild-release-2.0.0]\nCurrent branch:
-    feature/in-game-screens\nJazzcat Studios: All rights reserved \xA9"
+  m_Text: "Attack Imminent! Release build [release-2.0.0]\nJazzcat Studios: All rights
+    reserved \xA9"
 --- !u!222 &1911354210
 CanvasRenderer:
   m_ObjectHideFlags: 0
