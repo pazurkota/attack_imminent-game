@@ -426,7 +426,7 @@ MonoBehaviour:
   musicMixer: {fileID: 24100000, guid: 9896f8dbf4320425187a6e5ef6636ea6, type: 2}
   gameScore: 0
   highScore: 0
-  gameRunning: 0
+  gameRunning: 1
   isGamePaused: 0
 --- !u!4 &828122423
 Transform:
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cd6d73f7772824c9927f7843532999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuText: {fileID: 0}
+  pauseMenuText: {fileID: 944333513}
 --- !u!1 &1061940373
 GameObject:
   m_ObjectHideFlags: 0
