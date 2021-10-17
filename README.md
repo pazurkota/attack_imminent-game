@@ -1,29 +1,38 @@
-# ATTACK IMMINENT! - A first unity project
-<img alt="License" src="https://img.shields.io/github/license/pazurkota/attack_imminent-game?style=flat-square"> <img alt="Last commit" src="https://img.shields.io/github/last-commit/pazurkota/attack_imminent-game?style=flat-square"> <img alt="Version" src="https://img.shields.io/github/v/release/pazurkota/attack_imminent-game?include_prereleases&style=flat-square" />
-## 🚀 Basic information
-*What is game about?* It's simple shoot em' up, inspired by Sky Force series created by Infinite Dreams. Your mission is to stay as long alive as possible, there is no end, just another planes AND ~~ships~~ helicopters. This is my first unity project/game, so any constructive criticism is allowed here!
+# ATTACK IMMINENT!
+ATTACK IMMINENT! Is a simple open-source game made with [Unity](https://unity.com). You can play the game [Here](https://play.unity.com/mg/other/update-2-0-0-attack-imminent).
 
-## 👾 Technical information
-* Unity version: 2020.3.12f1
-* Game language: en_US
-* Current version: PRE_RELEASE-2.0
+![License](https://img.shields.io/github/license/pazurkota/attack_imminent-game?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/pazurkota/attack_imminent-game?style=flat-square)
+![Release](https://img.shields.io/github/v/release/pazurkota/attack_imminent-game?include_prereleases&style=flat-square)
 
-## 🔧 Setup
-### Using ZIP folder:
-* Download Unity Project.
-* Make sure if your version is 2020.3.12f1, otherwise, some errors can occur!
-* Drag the folder to your destination.
-* Run unity hub and click "Open" button.
-* Select downloaded folder destination.
+## 🎮 Basic information:
+So, *What is game about?* It's simple shoot em' up, inspired by Sky Force series created by Infinite Dreams. Your mission is to stay as long alive as possible, there is no end, just another planes AND ships helicopters. This is my first unity project/game, so any constructive criticism is allowed here!
 
-### Or clone repository:
-* Clone repository to your git client
-* Run unity hub and click "Open" button.
-* Select repo folder destination.
+## 👨‍🔧 Technical information:
+* Unity version used: 2020.3.12f1 (planned change to a newer version)
+* Game languague: English (United States)
+* Current Game Version: RELEASE-2.0.0
+* Game Support: Yes
 
-#### OR you can just simply play this game: https://play.unity.com/mg/other/attack-imminent-a-simple-shoot-em-up
+## 🔧 Setup:
+### Option 1, download the repository:
+* Make sure if your version is 2020.3.12f1
+* Download project
+* Extract the ZIP folder
+* Put extracted folder somewhere 
+* Open Unity Hub and choose "Open"
+* Select downloaded folder and run
 
-## 🎓 License and copyright
-This project is under [Apache License 2.0](LICENSE.md)
+### Option 2, clone the repository:
+* Copy the HTTPS link
+* Open your git client (or console)
+* Choose the "copy repostiory" option (or type `git clone`)
+* Open Unity Hub and choose "Open"
+* Open the repository folder and run
+
+Here you go! Now you can play the game in Unity Editor!
+
+## 🎓 License
+This project is under [Apache License 2.0](LICENSE.md).
 
 © PazurKOTA

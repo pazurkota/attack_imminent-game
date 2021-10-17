@@ -16,13 +16,9 @@ namespace Player
         [SerializeField] private bool hasShield = false;
         private float _horizontalInput;
         private float _verticalInput;
-    
-        // Public variables
-        public bool gameOver; // Check if game is NOT over
-    
+
         // Private components
         private AudioSource _playerAudio; // AudioSource component
-        private GameManager _gameManager;
 
         // Public components
         public GameObject playerShield; // Get player shield
@@ -44,7 +40,6 @@ namespace Player
         void Start()
         {
             _playerAudio = GetComponent<AudioSource>(); // Get AudioSource component from player
-            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
     
         void Update()
@@ -58,7 +53,7 @@ namespace Player
 
         void PlaneShoot()
         {
-            if (canShoot && _gameManager.gameRunning) // Check if player can shoot and the game is STILL running
+            if (canShoot && GameManager.Instance.gameRunning) // Check if player can shoot and the game is STILL running
             {
                 Instantiate(bulletProjectile, transform.position, bulletProjectile.transform.rotation); // Instantiate (create) bullet
                 _playerAudio.PlayOneShot(shootSound, 1.0f); // Play sound effect
@@ -69,7 +64,7 @@ namespace Player
 
         void PlayerMovement()
         {
-            if (_gameManager.gameRunning)
+            if (GameManager.Instance.gameRunning)
             {
                 // Move player in X axis (horizontal)
                 _horizontalInput = Input.GetAxis("Horizontal");
@@ -140,12 +135,6 @@ namespace Player
             }
         }
 
-        public void CreateShip()
-        {
-            gameObject.transform.localScale = new Vector3(20, 20, 20);
-            gameObject.transform.position = new Vector3(0, 6, 0);
-        }
-
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("EnemyHelicopter") && playerHealthPoints > 0)
@@ -166,7 +155,7 @@ namespace Player
              
             if (playerHealthPoints <= 0)
             {
-                _gameManager.GameOver();
+                GameManager.Instance.GameOver();
                 explosionFX.Play();
                 _playerAudio.PlayOneShot(gameOverSound, 1.0f);
                 gameObject.transform.localScale = new Vector3(0, 0, 0);
@@ -187,11 +176,11 @@ namespace Player
                 if (playerHealthPoints < 6)
                 {
                     ++playerHealthPoints;
-                    Debug.Log($"Added 1 HP! Now you have {playerHealthPoints} HP!");
+                    Debug.Log($"[GAME] Added 1 HP! Now you have {playerHealthPoints} HP!");
                 }
                 else
                 {
-                    Debug.Log("You have already max hp!");
+                    Debug.Log("[GAME] You have already max HP!");
                 }
                 Destroy(other.gameObject);
             }
