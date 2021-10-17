@@ -16,10 +16,7 @@ namespace Player
         [SerializeField] private bool hasShield = false;
         private float _horizontalInput;
         private float _verticalInput;
-    
-        // Public variables
-        public bool gameOver; // Check if game is NOT over
-    
+
         // Private components
         private AudioSource _playerAudio; // AudioSource component
 
@@ -136,12 +133,6 @@ namespace Player
                 hasShield = false;
                 playerShield.gameObject.SetActive(false);
             }
-        }
-
-        public void CreateShip()
-        {
-            gameObject.transform.localScale = new Vector3(20, 20, 20);
-            gameObject.transform.position = new Vector3(0, 6, 0);
         }
 
         private void OnCollisionEnter(Collision other)

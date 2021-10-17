@@ -1,4 +1,4 @@
-using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +7,10 @@ namespace Utility
     public class GameUIHandler : MonoBehaviour
     {
         // UI Components
+        [SerializeField] private TMP_Text scoreText;
         [SerializeField] private Text pauseMenuText;
+        [SerializeField] private GameObject gameOverUi;
+        
 
         // Start is called before the first frame update
         void Start()
@@ -20,6 +23,9 @@ namespace Utility
         {
             // Run methods
             PauseGame();
+            GameOver();
+
+            scoreText.text = "Score: " + GameManager.Instance.gameScore;
         }
         
         // Method that pause the game
@@ -29,6 +35,14 @@ namespace Utility
             {
                 GameManager.Instance.PauseGame(); // Pause the game
                 pauseMenuText.gameObject.SetActive(GameManager.Instance.isGamePaused); // Show the "Game Paused" button
+            }
+        }
+
+        private void GameOver()
+        {
+            if (GameManager.Instance.gameRunning == false)
+            {
+                gameOverUi.SetActive(true);
             }
         }
     }

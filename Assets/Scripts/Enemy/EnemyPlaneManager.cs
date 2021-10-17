@@ -7,12 +7,8 @@ namespace Enemy
     {
         public GameObject planePropeller;
 
-        private GameManager _gameManager;
-        
         void Update()
         {
-            _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-            
             planePropeller.transform.Rotate(Vector3.right * 3000 * Time.deltaTime);
             DestroyOutOfBounds();
         }
@@ -33,8 +29,7 @@ namespace Enemy
             {
                 Destroy(gameObject);
                 Destroy(other.gameObject);
-                
-                _gameManager.AddScore(5);
+                GameManager.Instance.AddScore(5);
             }
 
             if (other.CompareTag("Shield"))

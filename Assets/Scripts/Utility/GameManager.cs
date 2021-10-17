@@ -49,8 +49,9 @@ namespace Utility
             _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>(); // Get camera Audio Source component
             
             // InvokeRepeating 
-            InvokeRepeating("EnemyPlaneSpawn", 3, Random.Range(2, 4));
-            InvokeRepeating("EnemyHelicopterSpawn", 7, Random.Range(5, 10));
+            InvokeRepeating(nameof(EnemyPlaneSpawn), 3, Random.Range(2, 4));
+            InvokeRepeating(nameof(EnemyHelicopterSpawn), 7, Random.Range(5, 10));
+            InvokeRepeating(nameof(SpawnPowerups), 10, Random.Range(10, 25));
         }
         
         // Update is called once per frame
@@ -63,9 +64,12 @@ namespace Utility
         // Spawn Power-ups during the game
         void SpawnPowerups()
         {
-            Vector3 spawnPos = new Vector3(Random.Range(-8.45f, 8.45f), 6, Random.Range(-4.4f, 4.4f));
-            int randomPowerup = Random.Range(0, powerupPrefab.Length);
-            Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
+            if (gameRunning)
+            {
+                Vector3 spawnPos = new Vector3(Random.Range(-8.45f, 8.45f), 6, Random.Range(-4.4f, 4.4f));
+                int randomPowerup = Random.Range(0, powerupPrefab.Length);
+                Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
+            }
         }
         
         // Spawn the plane (enemy)
@@ -92,7 +96,6 @@ namespace Utility
         public void AddScore(int scoreToAdd)
         {
             gameScore += scoreToAdd;
-            // scoreText.text = "Score: " + gameScore;
         }
 
         // This method is activated after the player dies
