@@ -16,10 +16,7 @@ namespace Player
         [SerializeField] private bool hasShield = false;
         private float _horizontalInput;
         private float _verticalInput;
-    
-        // Public variables
-        public bool gameOver; // Check if game is NOT over
-    
+
         // Private components
         private AudioSource _playerAudio; // AudioSource component
 
@@ -138,12 +135,6 @@ namespace Player
             }
         }
 
-        public void CreateShip()
-        {
-            gameObject.transform.localScale = new Vector3(20, 20, 20);
-            gameObject.transform.position = new Vector3(0, 6, 0);
-        }
-
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("EnemyHelicopter") && playerHealthPoints > 0)
@@ -185,11 +176,11 @@ namespace Player
                 if (playerHealthPoints < 6)
                 {
                     ++playerHealthPoints;
-                    Debug.Log($"Added 1 HP! Now you have {playerHealthPoints} HP!");
+                    Debug.Log($"[GAME] Added 1 HP! Now you have {playerHealthPoints} HP!");
                 }
                 else
                 {
-                    Debug.Log("You have already max hp!");
+                    Debug.Log("[GAME] You have already max HP!");
                 }
                 Destroy(other.gameObject);
             }

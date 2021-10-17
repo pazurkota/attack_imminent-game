@@ -13,9 +13,6 @@ namespace Utility
         public GameObject enemyPlanePrefab;
         public GameObject enemyHelicopterPrefab;
         public GameObject[] powerupPrefab; // Get all power ups 
-        public AudioClip gameMusic;
-        public AudioMixer playerMixer;
-        public AudioMixer musicMixer;
 
         // Private Components
         private PlayerController _playerController;
@@ -26,11 +23,11 @@ namespace Utility
         public int highScore;
         public bool gameRunning;
         public bool isGamePaused;
-        private static readonly int IsGameOver = Animator.StringToHash("isGameOver");
 
         public static GameManager Instance;
         
-        private void Awake() // Access GameManager without giving a reference
+        // Access GameManager without giving a reference
+        private void Awake()
         {
             if (Instance != null)
             {
@@ -42,62 +39,70 @@ namespace Utility
             DontDestroyOnLoad(gameObject);
         }
 
-        // Actual Code
+        // Start is called before the first frame update
         void Start()
         {
-            Debug.Log("Game has been activated");
+            Debug.Log($"[GAME] Game has been started (current scene opened: {SceneManager.GetActiveScene().name}.unity)"); // Show if game has started + get scene name
             _cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>(); // Get camera Audio Source component
             
-            InvokeRepeating("EnemyPlaneSpawn", 3, Random.Range(2, 4));
-            InvokeRepeating("EnemyHelicopterSpawn", 7, Random.Range(5, 10));
+            // InvokeRepeating 
+            InvokeRepeating(nameof(EnemyPlaneSpawn), 3, Random.Range(2, 4));
+            InvokeRepeating(nameof(EnemyHelicopterSpawn), 7, Random.Range(5, 10));
+            InvokeRepeating(nameof(SpawnPowerups), 10, Random.Range(10, 25));
         }
-
+        
+        // Update is called once per frame
         private void Update()
         {
             SaveHighScore();
+            SetDeltaTime();
         }
-
+        
+        // Spawn Power-ups during the game
         void SpawnPowerups()
         {
-            Vector3 spawnPos = new Vector3(Random.Range(-8.45f, 8.45f), 6, Random.Range(-4.4f, 4.4f));
-            int randomPowerup = Random.Range(0, powerupPrefab.Length);
-            Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
+            if (gameRunning)
+            {
+                Vector3 spawnPos = new Vector3(Random.Range(-8.45f, 8.45f), 6, Random.Range(-4.4f, 4.4f));
+                int randomPowerup = Random.Range(0, powerupPrefab.Length);
+                Instantiate(powerupPrefab[randomPowerup], spawnPos, powerupPrefab[randomPowerup].transform.rotation);
+            }
         }
-
+        
+        // Spawn the plane (enemy)
         void EnemyPlaneSpawn()
         {
-            if (gameRunning)
+            if (gameRunning) // Check if game is running
             {
                 Vector3 spawnPos = new Vector3(Random.Range(-7.75f, 7.75f), 6, 8); 
                 Instantiate(enemyPlanePrefab, spawnPos, enemyPlanePrefab.transform.rotation);
             }
         }
 
+        // Spawn the helicopter (enemy)
         void EnemyHelicopterSpawn()
         {
-            if (gameRunning)
+            if (gameRunning) // Check if game is running
             {
                 Vector3 spawnPos = new Vector3(Random.Range(-8.1f, 8.1f), 6, 8);
                 Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);   
             }
         }
 
+        // Add score
         public void AddScore(int scoreToAdd)
         {
             gameScore += scoreToAdd;
-            // scoreText.text = "Score: " + gameScore;
         }
 
+        // This method is activated after the player dies
         public void GameOver()
         {
             gameRunning = false;
             _cameraAudioSource.Stop();
-
-            // gameOver.gameObject.SetActive(true);
-            int score = PlayerPrefs.GetInt("Highscore");
-            // highScoreText.text = "Highscore: " + score;
         }
 
+        // Save the highscore 
         void SaveHighScore()
         {
             if (gameScore > highScore)
@@ -106,17 +111,24 @@ namespace Utility
                 PlayerPrefs.SetInt("Highscore", highScore);
             }
         }
-
-        public void SetPlayerVolume(float sliderValue)
+        
+        // Pause game method (sets the "isGamePaused") bool
+        public void PauseGame()
         {
-            playerMixer.SetFloat("PlayerVol", Mathf.Log10(sliderValue) * 20);
-            PlayerPrefs.SetFloat("PlayerVolume", sliderValue);
+            isGamePaused = !isGamePaused;
         }
-
-        public void SetMusicVolmue(float sliderValue)
+        
+        // Set the DeltaTime in game
+        public void SetDeltaTime()
         {
-            musicMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
-            PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+            if (isGamePaused)
+            {
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
         }
     }
 }
