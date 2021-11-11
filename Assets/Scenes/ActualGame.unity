@@ -920,6 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPlanePrefab: {fileID: 2480941734362383583, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
   enemyHelicopterPrefab: {fileID: 8277268270088658548, guid: 16ac732b58c8753419a01038b1642b0d, type: 3}
+  enemyRocketPrefab: {fileID: 3451375180222685661, guid: 9ba9b92c961bbe34c81d773b5400ec24, type: 3}
   powerupPrefab:
   - {fileID: 107744, guid: 0782c4fdae5f1624ba26300a1dc7a0a7, type: 3}
   - {fileID: 132260, guid: 510349479745aac4b9209e9326e42601, type: 3}
