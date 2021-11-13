@@ -34,7 +34,7 @@ namespace Player
         /*
          * End of variable, down below it's actual code
          * 
-         * Copyright: Jazzcat studios, all rights reserved ©
+         * Copyright: PazurKOTA studios, all rights reserved ©
          */
     
         void Start()

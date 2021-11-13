@@ -920,6 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPlanePrefab: {fileID: 2480941734362383583, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
   enemyHelicopterPrefab: {fileID: 8277268270088658548, guid: 16ac732b58c8753419a01038b1642b0d, type: 3}
+  enemyRocketPrefab: {fileID: 3451375180222685661, guid: 9ba9b92c961bbe34c81d773b5400ec24, type: 3}
   powerupPrefab:
   - {fileID: 107744, guid: 0782c4fdae5f1624ba26300a1dc7a0a7, type: 3}
   - {fileID: 132260, guid: 510349479745aac4b9209e9326e42601, type: 3}
@@ -2280,6 +2281,38 @@ PrefabInstance:
     - target: {fileID: 4565012359782041809, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192826115564721822, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb47ae150b87484d8e722b1d1a407a0, type: 3}

@@ -12,6 +12,7 @@ namespace Utility
         // Public Components
         public GameObject enemyPlanePrefab;
         public GameObject enemyHelicopterPrefab;
+        public GameObject enemyRocketPrefab;
         public GameObject[] powerupPrefab; // Get all power ups 
 
         // Private Components
@@ -22,6 +23,9 @@ namespace Utility
         public int highScore;
         public bool gameRunning;
         public bool isGamePaused;
+        
+        // Experimental
+        public bool enableRockets;
 
         public static GameManager Instance;
         
@@ -47,6 +51,7 @@ namespace Utility
             InvokeRepeating(nameof(EnemyPlaneSpawn), 3, Random.Range(2, 4));
             InvokeRepeating(nameof(EnemyHelicopterSpawn), 7, Random.Range(5, 10));
             InvokeRepeating(nameof(SpawnPowerups), 10, Random.Range(10, 25));
+            InvokeRepeating(nameof(EnemyRocketSpawn), 20, Random.Range(25, 50));
         }
         
         // Update is called once per frame
@@ -84,6 +89,16 @@ namespace Utility
             {
                 Vector3 spawnPos = new Vector3(Random.Range(-8.1f, 8.1f), 6, 8);
                 Instantiate(enemyHelicopterPrefab, spawnPos, enemyHelicopterPrefab.transform.rotation);   
+            }
+        }
+
+        // Spawn rockets
+        void EnemyRocketSpawn()
+        {
+            if (gameRunning && enableRockets) // Check if game is running AND player enable rocket feature
+            {
+                Vector3 spawnPos = new Vector3(Random.Range(-8.6f, 8.6f), 6, 10);
+                Instantiate(enemyRocketPrefab, spawnPos, enemyRocketPrefab.transform.rotation);
             }
         }
 
@@ -126,6 +141,11 @@ namespace Utility
             {
                 Time.timeScale = 1f;
             }
+        }
+
+        public void EnableRocketFeature()
+        {
+            enableRockets = !enableRockets;
         }
     }
 }
