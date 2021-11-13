@@ -11,7 +11,7 @@ So, *What is game about?* It's simple shoot em' up, inspired by Sky Force series
 ## 👨‍🔧 Technical information:
 * Unity version used: 2020.3.12f1 (planned change to a newer version)
 * Game languague: English (United States)
-* Current Game Version: RELEASE-2.0.0
+* Current Game Version: RELEASE-2.1.0
 * Game Support: Yes
 
 ## 🔧 Setup:
