@@ -23,6 +23,9 @@ namespace Utility
         public int highScore;
         public bool gameRunning;
         public bool isGamePaused;
+        
+        // Experimental
+        public bool enableRockets;
 
         public static GameManager Instance;
         
@@ -92,7 +95,7 @@ namespace Utility
         // Spawn rockets
         void EnemyRocketSpawn()
         {
-            if (gameRunning) // Check if game is running
+            if (gameRunning && enableRockets) // Check if game is running AND player enable rocket feature
             {
                 Vector3 spawnPos = new Vector3(Random.Range(-8.6f, 8.6f), 6, 10);
                 Instantiate(enemyRocketPrefab, spawnPos, enemyRocketPrefab.transform.rotation);
@@ -138,6 +141,11 @@ namespace Utility
             {
                 Time.timeScale = 1f;
             }
+        }
+
+        public void EnableRocketFeature()
+        {
+            enableRockets = !enableRockets;
         }
     }
 }
