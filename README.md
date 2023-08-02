@@ -1,5 +1,3 @@
-# NOTE: This project is no longer supported and will be read-only. If you wish to edit source code, please fork this repo
-
 # ATTACK IMMINENT!
 ATTACK IMMINENT! Is a simple open-source game made with [Unity](https://unity.com). You can play the game [Here](https://play.unity.com/mg/other/update-2-0-0-attack-imminent).
 
